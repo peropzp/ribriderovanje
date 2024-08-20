@@ -1,80 +1,121 @@
 
  //poklopac 
- 
+
  difference() {
- rotate_extrude() square([88,25]);
- translate([0,27,0]) rotate_extrude() square([55.5,25]);
- translate([0,27,0]) rotate_extrude() square([57,5]);
- translate([65,-10,0]) rotate_extrude() square([16.5,25]);
- translate([-35,-50,0]) rotate_extrude() square([19,25]);
- translate([-35,-50,10]) rotate_extrude() square([25,15]);
-     
+ cylinder(20,89,89); 
+ translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
+ translate([69,0,-1]) cylinder(22, 16.1, 16.1); //celije
+ translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
+ translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
 }
 
+
 color("black",1) {
-    translate([-35,-50,-15])
+    translate([0,-58,-15])
     difference() {
         cylinder(15,28,28);
-        cylinder(15,17,17);
+        translate([0,0,-1]) cylinder(18,16,16);
     }
 }
+
+
+color("black",1) {
+    translate([0,27,-20])
+    difference() {
+        cylinder(15,28,28);
+        translate([0,0,-1]) cylinder(18,16,16);
+    }
+}
+
 
 
 //scrubber
 color("red",1) {
-    translate([0,27,0])
-    difference() {
-        union () {
-            rotate_extrude() square([55,250]);
-            rotate_extrude() square([57,5]);
+    translate([0,29,0])
+        difference() {
+            union () {
+                cylinder(290,55,55);
+                translate([0,0,-5]) cylinder(5,57,57);
+            }
+            translate([0,0,-2]) cylinder(300,48,48);
+            translate([0,0,25]) cylinder(300,52,52);
+            translate([0,0,-6])cylinder(12,19,19);
+            rotate_extrude() translate([53.5,8,0]) square([2,2]);
+            rotate_extrude() translate([53.5,12,0]) square([2,2]);
+            //rupe za drzac
+            translate([50,0,260]) rotate([0,90,0]) cylinder(10,3,3);
+            translate([-60,0,260]) rotate([0,90,0]) cylinder(10,3,3);
+            translate([0,60,260]) rotate([90,90,0]) cylinder(10,3,3);
+            translate([0,-50,260]) rotate([90,90,0]) cylinder(10,3,3);
         }
-        translate([0,0,3]) rotate_extrude() square([48,250]);
-        translate([0,0,25]) rotate_extrude() square([52,250]);
-        rotate_extrude() square([19,10]);
-        rotate_extrude() translate([53,8,0]) square([2,2]);
-        rotate_extrude() translate([53,12,0]) square([2,2]);
     }
-}
-color("black",1) {
-    translate([0,27,-15])
+
+
+//zatvarac
+color("blue",1) {
+    translate([0,29,255])
     difference() {
-        cylinder(15,28,28);
-        cylinder(15,17,17);
+        union() {
+            cylinder(6,52,52);
+            translate([51,0,3]) rotate([0,90,0]) cylinder(3,2.5,2.5);
+            translate([-54,0,3]) rotate([0,90,0]) cylinder(3,2.5,2.5);
+            translate([0,54,3]) rotate([90,90,0]) cylinder(3,2.5,2.5);
+            translate([0,-51,3]) rotate([90,90,0]) cylinder(3,2.5,2.5);
+        }
+        translate([0,0,-1]) cylinder(8,49,49);
+        translate([5,5,-1]) cube([52,52,10]);
     }
 }
 
 
 //celije
 color("green",1)
-translate ([65,-10,0])
+translate ([69,0,0])
 difference() {
     union() {
-        rotate_extrude() square([16,220]);
-        translate([0,0,-5]) cylinder(5, 22, 22);
+        cylinder(220, 16,16);
+        translate([0,0,-5]) cylinder(5, 18, 18);
     }
-    translate([0,0,-5]) rotate_extrude() square([4,25]);
-    translate([0,0,20]) rotate_extrude() square([14,200]);
-    translate([10,10,20]) rotate_extrude() square([10,60]);
-    translate([10,10,85]) rotate_extrude() square([10,60]);
-    translate([10,10,150]) rotate_extrude() square([10,60]);
-    rotate_extrude() translate([14,8,0]) square([2,2]);
-    rotate_extrude() translate([14,12,0]) square([2,2]);
-
+    translate([0,0,20]) cylinder(201, 14, 14);
+    translate([0,0,-6]) cylinder(27, 3, 3);
+    translate([10,10,20]) cylinder(60, 14, 14);
+    translate([10,10,85]) cylinder(60, 14, 14);
+    translate([10,10,150]) cylinder(60, 14, 14);
+    rotate_extrude() translate([14.5,8,0]) square([2,2]);
+    rotate_extrude() translate([14.5,12,0]) square([2,2]);
 }
+
+
 
 //oklop
 color("silver",0.5) {
  difference() {
- rotate_extrude() square([89,300]);
- rotate_extrude() square([88,299]);
+ cylinder(300, 90, 90) ;
+ translate([0,0,-1]) cylinder(300, 89, 89) ;
  }
-translate([-5,-50,300])
+translate([-30,0,300])
  linear_extrude(300) circle(10);
-translate([-5,50,300])
+translate([30,0,300])
  linear_extrude(300) circle(10);
-}
-translate([-50,0,320])
- linear_extrude(350) circle(50);
-translate([50,0,320])
- linear_extrude(350) circle(50);
  
+ translate([-30,0,300])
+ rotate([0,90,0])
+ linear_extrude(60) circle(10);
+ 
+ translate([-30,0,300])
+    rotate([90,0,0])
+        linear_extrude(60) circle(10);
+
+  translate([30,0,300])
+    rotate([-90,0,0])
+        linear_extrude(60) circle(10);
+}
+
+
+//boce
+translate([0,50,320])
+ linear_extrude(350) circle(50);
+translate([0,-50,320])
+ linear_extrude(350) circle(50);
+
+
