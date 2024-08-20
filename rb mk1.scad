@@ -7,6 +7,8 @@
  translate([0,27,0]) rotate_extrude() square([57,5]);
  translate([65,-10,0]) rotate_extrude() square([16.5,25]);
  translate([-35,-50,0]) rotate_extrude() square([19,25]);
+ translate([-35,-50,10]) rotate_extrude() square([25,15]);
+     
 }
 
 color("black",1) {
@@ -26,8 +28,8 @@ color("red",1) {
             rotate_extrude() square([55,250]);
             rotate_extrude() square([57,5]);
         }
-        translate([0,0,5]) rotate_extrude() square([48,250]);
-        translate([0,0,20]) rotate_extrude() square([52,250]);
+        translate([0,0,3]) rotate_extrude() square([48,250]);
+        translate([0,0,25]) rotate_extrude() square([52,250]);
         rotate_extrude() square([19,10]);
         rotate_extrude() translate([53,8,0]) square([2,2]);
         rotate_extrude() translate([53,12,0]) square([2,2]);
@@ -75,3 +77,4 @@ translate([-50,0,320])
  linear_extrude(350) circle(50);
 translate([50,0,320])
  linear_extrude(350) circle(50);
+ 
