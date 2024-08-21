@@ -8,9 +8,9 @@
      translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
      translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
      translate([48,-10,-1]) cylinder(6,5,5);  //rupe za osigurace
-     translate([48,-10,-1]) cylinder(16,2,2);  //rupe za osigurace
+     translate([48,-10,-1]) cylinder(18,2,2);  //rupe za osigurace
      translate([-48,-10,-1]) cylinder(6,5,5);
-     translate([-48,-10,-1]) cylinder(16,2,2);  //rupe za osigurace
+     translate([-48,-10,-1]) cylinder(18,2,2);  //rupe za osigurace
 }
 
 //osiguraci
