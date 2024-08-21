@@ -7,42 +7,32 @@
      translate([-69,0,-1]) cylinder(22, 16.1, 16.1); //desno
      translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
      translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
-     translate([48,-10,-1]) cylinder(6,5,5);  //rupe za osigurace
-     translate([48,-10,-1]) cylinder(18,2,2);  //rupe za osigurace
-     translate([-48,-10,-1]) cylinder(6,5,5);
-     translate([-48,-10,-1]) cylinder(18,2,2);  //rupe za osigurace
 }
 
 //osiguraci
 color("blue",1) {
-    translate([48,-10,-10]) rotate([0,0,45]) {
+    translate([52,10,-10]) {
         difference() {
-            union() {
-                cylinder(15,5,5);
-                intersection() {
-                    cylinder(5,10,10);
-                    translate([-3,-3,0])
-                    linear_extrude(10) polygon(points=[[0,0],[30,0],[0,30]]);
-                }
-            }
-            translate([0,0,-1]) cylinder(17,2.5,2.5);
+            linear_extrude(10) polygon(points=[[0,0],[33,0],[0,40]]);
+            translate([13,15,-1]) cylinder(12,2,2); //rupa za sraf
+            translate([-52,19,5])cylinder(6,57,57);
+            translate([-52,19,-1])cylinder(12,55,55);
+            translate([17,-10,5])cylinder(6,18,18);
+            translate([17,-10,-1])cylinder(12,16,16);
         }
     }
-    translate([-48,-10,-10]) rotate([0,0,45]) {
+    translate([-51,10,-10]) {
+        mirror([180,0,0])
         difference() {
-            union() {
-                cylinder(15,5,5);
-                intersection() {
-                    cylinder(5,10,10);
-                    translate([-3,-3,0])
-                    linear_extrude(10) polygon(points=[[0,0],[30,0],[0,30]]);
-                }
-            }
-            translate([0,0,-1]) cylinder(17,2.5,2.5);
+            linear_extrude(10) polygon(points=[[0,0],[33,0],[0,40]]);
+            translate([13,15,-1]) cylinder(12,2,2);
+            translate([-52,19,5])cylinder(6,57,57);
+            translate([-52,19,-1])cylinder(12,55,55);
+            translate([17,-10,5])cylinder(6,18,18);
+            translate([17,-10,-1])cylinder(12,16,16);
         }
     }
 }
-
 
 color("black",1) {
     translate([0,-58,-15])
