@@ -1,10 +1,11 @@
  //poklopac 
  difference() {
- cylinder(20,89,89); 
- translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
- translate([69,0,-1]) cylinder(22, 16.1, 16.1); //celije
- translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
- translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
+     cylinder(20,89,89); 
+     translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
+     translate([69,0,-1]) cylinder(22, 16.1, 16.1); //celije levo
+     translate([-69,0,-1]) cylinder(22, 16.1, 16.1); //desno
+     translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
+     translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
 }
 
 
@@ -53,7 +54,7 @@ color("red",1) {
     }
 
 
-//resetke
+//resetka
 color("silver",1) {
     for(a = [25 : 215 : 240])
         translate([0,29,a])
@@ -76,6 +77,19 @@ color("silver",1) {
         }
 }
 
+
+//cep
+color("green",1)
+translate ([-69,0,0])
+difference() {
+    union() {
+        cylinder(25, 16,16);
+        translate([0,0,-5]) cylinder(5, 18, 18);
+    }
+    rotate_extrude() translate([14.5,8,0]) square([2,2]);
+    rotate_extrude() translate([14.5,12,0]) square([2,2]);
+    translate([0,0,-6]) cylinder(27, 3, 3);
+}
 
 //celije
 color("green",1)
@@ -124,3 +138,4 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
+
