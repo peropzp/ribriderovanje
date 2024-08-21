@@ -58,17 +58,17 @@ color("red",1) {
    translate([0,29,0])
         difference() {
             union () {
-                cylinder(290,55,55);
+                cylinder(295,55,55);
                 translate([0,0,-5]) cylinder(5,57,57);
             }
             translate([0,0,-2]) cylinder(300,48,48);
-            translate([0,0,25]) cylinder(300,52,52);
+            translate([0,0,20]) cylinder(300,52,52);
             translate([0,0,-6])cylinder(12,19,19);
             rotate_extrude() translate([53.5,8,0]) square([2,2]);
             rotate_extrude() translate([53.5,12,0]) square([2,2]);
             //rupe za disanje
-            translate([0,0,260])
-            for(b = [0 : 10 : 30])
+            translate([0,0,285])
+            for(b = [0 : 10 : 10])
                 translate([0,0,b])
                     union() {
                         for(a = [0 : 20 : 350]) 
@@ -81,7 +81,7 @@ color("red",1) {
 
 //resetka
 color("silver",1) {
-    for(a = [25 : 215 : 240])
+    for(a = [20 : 245 : 265])
         translate([0,29,a])
         union() {
             difference() {
@@ -164,4 +164,3 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
-
