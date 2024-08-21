@@ -1,3 +1,4 @@
+
  //poklopac 
  difference() {
      cylinder(20,89,89); 
@@ -6,6 +7,38 @@
      translate([-69,0,-1]) cylinder(22, 16.1, 16.1); //desno
      translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
      translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
+     translate([48,-10,-1]) cylinder(6,5,5);  //rupe za osigurace
+     translate([-48,-10,-1]) cylinder(6,5,5);
+}
+
+//osiguraci
+color("blue",1) {
+    translate([48,-10,-10]) rotate([0,0,45]) {
+        difference() {
+            union() {
+                cylinder(15,5,5);
+                intersection() {
+                    cylinder(5,10,10);
+                    translate([-3,-3,0])
+                    linear_extrude(10) polygon(points=[[0,0],[30,0],[0,30]]);
+                }
+            }
+            translate([0,0,-1]) cylinder(17,2,2);
+        }
+    }
+    translate([-48,-10,-10]) rotate([0,0,45]) {
+        difference() {
+            union() {
+                cylinder(15,5,5);
+                intersection() {
+                    cylinder(5,10,10);
+                    translate([-3,-3,0])
+                    linear_extrude(10) polygon(points=[[0,0],[30,0],[0,30]]);
+                }
+            }
+            translate([0,0,-1]) cylinder(17,2,2);
+        }
+    }
 }
 
 
@@ -138,4 +171,5 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
+
 
