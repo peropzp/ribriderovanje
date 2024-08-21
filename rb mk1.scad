@@ -1,4 +1,4 @@
-$fn = $preview ? 12 : 128;
+$fn = $preview ? 24 : 128;
 
  //poklopac 
  difference() {
@@ -55,7 +55,7 @@ color("black",1) {
 
 //scrubber
 color("red",1) {
-    translate([0,29,0])
+   translate([0,29,0])
         difference() {
             union () {
                 cylinder(290,55,55);
@@ -78,7 +78,6 @@ color("red",1) {
                     }
         }
     }
-
 
 //resetka
 color("silver",1) {
@@ -116,6 +115,7 @@ difference() {
     rotate_extrude() translate([14.5,12,0]) square([2,2]);
     translate([0,0,-6]) cylinder(27, 3, 3);
 }
+
 
 //celije
 color("green",1)
@@ -164,5 +164,4 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
-
 
