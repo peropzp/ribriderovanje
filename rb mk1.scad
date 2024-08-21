@@ -1,3 +1,4 @@
+$fn = $preview ? 12 : 128;
 
  //poklopac 
  difference() {
