@@ -1,5 +1,83 @@
 $fn = $preview ? 64 : 128;
 
+
+//dsv
+translate([150,0,0])
+color("purple",0.5) {
+    difference() {
+        union() {
+            cylinder(80, 23, 23); //tuba za ventil
+            translate([0,25,50]) cylinder(50, 23, 23); //tuba za crevo 1
+            translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
+            translate([-23,-25,50]) cube([46, 49, 32]);
+            translate([5,15,38]) rotate([-90,30,0])  //usnik
+                union() {
+                    cylinder(47, 11,11);
+                    translate([0,20,0]) cylinder(47, 11,11);
+                    translate([-11,0,0]) cube([22,22,47]);
+            }
+            translate([-11,20,30]) cube([22,25,25]); //spoj usnika
+            translate([-10,20,0]) cube([20,5,25]); //kocka za sraf
+
+        }
+        translate([0,0,-1]) cylinder(76, 16, 16); //rupa za venti l
+        translate([0,0,-1]) cylinder(56, 19.1, 19.1); //rupa za venti l
+        translate([0,25,81]) cylinder(21, 20, 20); //rupa za pecurku 1
+        translate([0,25,55]) cylinder(46, 19, 19); //rupa za crevo 1
+        translate([0,-25,81]) cylinder(21, 20, 20); //rupa za pecurku 2
+        translate([0,-25,55]) cylinder(46, 19, 19); //rupa za crevo 2
+
+        translate([0,-25,82]) //prsten za crevo 1
+            difference() {
+                    cylinder(16, 24, 24);
+                    cylinder(16, 22, 22);
+            }
+
+        translate([0,25,82]) //prsten za crevo 2
+            difference() {
+                    cylinder(16, 24, 24);
+                    cylinder(16, 22, 22);
+            }
+        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
+            union() {
+                cylinder(55, 8,8);
+                translate([0,20,0]) cylinder(55, 8,8);
+                translate([-8,0,0]) cube([16,20,55]);
+            }
+
+        translate([5,45,38]) rotate([-90,30,0])  //prsten za usnik
+            difference() {
+                union() {
+                    cylinder(15, 12,12);
+                    translate([0,20,0]) cylinder(15, 12,12);
+                    translate([-12,0,0]) cube([24,24,15]);
+                }
+                union() {
+                    cylinder(15, 10,10);
+                    translate([0,20,0]) cylinder(15, 10,10);
+                    translate([-10,0,0]) cube([20,20,15]);
+                }
+            }
+
+        translate([0,15,5]) rotate([-90,0,0]) cylinder(20,2,2); //rupa za sraf
+    }
+}
+translate([150,0,0])
+color("blue",1) {
+  
+        difference() {
+            union() {
+                cylinder(55, 19, 19);
+                translate([0,0,-7])cylinder(7, 12, 19);
+            }
+            rotate_extrude() translate([17.1,50,0]) square([2,2]); //oring
+            translate([-3,15,-1]) cube([6,6,49]); //slic za sraf
+            translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
+        }
+
+}
+
+
  //poklopac 
  difference() {
      cylinder(20,89,89); 
@@ -197,3 +275,5 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
+
+
