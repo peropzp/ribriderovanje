@@ -1,11 +1,11 @@
-$fn = $preview ? 24 : 128;
+$fn = $preview ? 64 : 128;
 
  //poklopac 
  difference() {
      cylinder(20,89,89); 
      translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
-     translate([69,0,-1]) cylinder(22, 16.1, 16.1); //celije levo
-     translate([-69,0,-1]) cylinder(22, 16.1, 16.1); //desno
+     translate([69,0,-1]) cylinder(22, 16.5, 16.5); //celije levo
+     translate([-69,0,-1]) cylinder(22, 16.5, 16.5); //desno
      translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
      translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
 }
@@ -19,7 +19,7 @@ color("blue",1) {
             translate([-52,19,5])cylinder(6,57,57);
             translate([-52,19,-1])cylinder(12,55,55);
             translate([17,-10,5])cylinder(6,18,18);
-            translate([17,-10,-1])cylinder(12,16,16);
+            translate([17,-10,-1])cylinder(12,16.5,16.5);
         }
     }
     translate([-51,10,-10]) {
@@ -30,7 +30,7 @@ color("blue",1) {
             translate([-52,19,5])cylinder(6,57,57);
             translate([-52,19,-1])cylinder(12,55,55);
             translate([17,-10,5])cylinder(6,18,18);
-            translate([17,-10,-1])cylinder(12,16,16);
+            translate([17,-10,-1])cylinder(12,16.5,16.5);
         }
     }
 }
@@ -108,12 +108,12 @@ color("green",1)
 translate ([-69,0,0])
 difference() {
     union() {
-        cylinder(25, 16,16);
+        cylinder(25, 16.4,16.4);
         translate([0,0,-5]) cylinder(5, 18, 18);
     }
-    rotate_extrude() translate([14.5,8,0]) square([2,2]);
-    rotate_extrude() translate([14.5,12,0]) square([2,2]);
-    translate([0,0,-6]) cylinder(27, 3, 3);
+    rotate_extrude() translate([14.5,8,0]) square([2,3]);  //oring
+    rotate_extrude() translate([14.5,12,0]) square([2,3]); //oring
+    translate([0,0,-6]) cylinder(27, 3, 3); //rupa za gas
 }
 
 
@@ -122,16 +122,46 @@ color("green",1)
 translate ([69,0,0])
 difference() {
     union() {
-        cylinder(220, 16,16);
+        cylinder(220, 16.4,16.4);
         translate([0,0,-5]) cylinder(5, 18, 18);
     }
-    translate([0,0,20]) cylinder(201, 14, 14);
+    translate([0,0,20]) cylinder(201, 14.5, 14.5);
     translate([0,0,-6]) cylinder(27, 3, 3);
     translate([10,10,20]) cylinder(60, 14, 14);
     translate([10,10,85]) cylinder(60, 14, 14);
     translate([10,10,150]) cylinder(60, 14, 14);
-    rotate_extrude() translate([14.5,8,0]) square([2,2]);
-    rotate_extrude() translate([14.5,12,0]) square([2,2]);
+    rotate_extrude() translate([14.5,8,0]) square([2,3]); //oring
+    rotate_extrude() translate([14.5,12,0]) square([2,3]); //oring
+}
+
+
+//p-port za creva
+color("magenta",1)
+translate ([0,-57,0])
+difference() {
+    union() {
+        cylinder(11, 16.4,16.4);
+        translate([0,0,-3]) cylinder(3,17.6, 16.4);
+        translate([0,0,-43]) cylinder(40,17.6, 17.6);
+        translate([0,0,-45]) cylinder(3,20, 20);
+    }
+    rotate_extrude() translate([15.5,-8,0]) square([2.5,2]);  //opruga
+    rotate_extrude() translate([14.5,4,0]) square([2,3]);  //oring
+    translate([0,0,-46]) cylinder(60, 13, 13); //rupa za gas
+}
+
+color("magenta",1)
+translate ([0,29,-5])
+difference() {
+    union() {
+        cylinder(11, 16.4,16.4);
+        translate([0,0,-3]) cylinder(3,17.6, 16.4);
+        translate([0,0,-43]) cylinder(40,17.6, 17.6);
+        translate([0,0,-45]) cylinder(3,20, 20);
+    }
+    rotate_extrude() translate([15.5,-8,0]) square([2.5,2]);  //opruga
+    rotate_extrude() translate([14.5,4,0]) square([2,3]);  //oring
+    translate([0,0,-46]) cylinder(60, 13, 13); //rupa za gas
 }
 
 //oklop
