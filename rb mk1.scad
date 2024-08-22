@@ -62,6 +62,8 @@ color("purple",0.5) {
         translate([0,15,5]) rotate([-90,0,0]) cylinder(20,2,2); //rupa za sraf
     }
 }
+
+//dsv cep
 translate([150,0,0])
 color("blue",1) {
   
@@ -70,8 +72,8 @@ color("blue",1) {
                 cylinder(55, 19, 19);
                 translate([0,0,-7])cylinder(7, 12, 19);
             }
-            rotate_extrude() translate([17.1,50,0]) square([2,2]); //oring
-            translate([-3,15,-1]) cube([6,6,49]); //slic za sraf
+            rotate_extrude() translate([17.1,50,0]) square([2,3]); //oring
+            translate([-4,15,-1]) cube([8,8,49]); //slic za sraf
             translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
         }
 
@@ -258,22 +260,47 @@ color("silver",0.5) {
             union(){    
              translate([-30,0,0]) cylinder(300, 10, 10);
              translate([30,0,0]) cylinder(300, 10, 10);
-             translate([-75,0,0]) 
-                rotate([0,90,0]) cylinder(150, 10, 10);
-             translate([-30,60,0]) 
-                rotate([90,0,0]) cylinder(120, 10, 10);
-             translate([30,60,0]) 
-                rotate([90,0,0]) cylinder(120, 10, 10);
-             translate([-26,0,0]) cube([52, 1, 300]);
             }
     }
 }
 
 
+/*
 //boce
-translate([0,50,320])
+translate([0,50,20])
  linear_extrude(350) circle(50);
-translate([0,-50,320])
+translate([0,-50,20])
  linear_extrude(350) circle(50);
+*/
 
+
+
+//oklop valjak - 950g
+translate([550,0,0])
+rotate([0,-90,90])
+color("silver",1) {
+    difference() {
+        cube([559,300,1]);
+        for(a = [25 : 30 : 545]) {
+            for(b = [30 : 30 : 270]) {
+                translate([a,b,-5]) cylinder(10, 10, 10);
+            }
+        }
+    }
+}
+
+translate([150,0,500])
+rotate([0,-90,90])
+color("silver",1) {
+    difference() {
+        cylinder(2,89,89);
+//        for(a = [0 : 36 : 350])
+//            rotate([0,0,a+18]) translate([52,0,-5]) cylinder(10, 9, 9);
+        for(a = [0 : 30 : 350])
+            rotate([0,0,a + 15]) translate([70,0,-5]) cylinder(10, 12, 12);
+        translate([-40,0,-5]) cylinder(10, 15, 15);
+        translate([40,0,-5]) cylinder(10, 15, 15);
+
+    }
+}
 
