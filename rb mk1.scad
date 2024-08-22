@@ -70,10 +70,10 @@ color("red",1) {
             rotate_extrude() translate([52.5,12,0]) square([3,3]);
             //rupe za disanje
             translate([0,0,275])
-            for(b = [0 : 10 : 10])
+            for(b = [10 : 10 : 10])
                 translate([0,0,b])
                     union() {
-                        for(a = [0 : 20 : 350]) 
+                        for(a = [0 : 15 : 350]) 
                             rotate([0,0,a + b])
                                 translate([50,0,-10]) 
                                     rotate([0,90,0]) cylinder(10,5,5);
@@ -83,7 +83,7 @@ color("red",1) {
 
 //resetka
 color("silver",1) {
-    for(a = [25 : 230 : 255])
+    for(a = [25 : 240 : 265])
         translate([0,29,a])
         union() {
             difference() {
