@@ -11,8 +11,8 @@ $fn = $preview ? 64 : 128;
 }
 
 //osiguraci
-color("blue",1) {
-    translate([52,10,-10]) {
+color("blue",1) 
+    translate([52,10,-10]) 
         difference() {
             linear_extrude(10) polygon(points=[[0,0],[33,0],[0,40]]);
             translate([13,15,-1]) cylinder(12,2,2); //rupa za sraf
@@ -21,8 +21,10 @@ color("blue",1) {
             translate([17,-10,5])cylinder(6,18,18);
             translate([17,-10,-1])cylinder(12,16.5,16.5);
         }
-    }
-    translate([-51,10,-10]) {
+   
+
+color("blue",1)     
+    translate([-51,10,-10]) 
         mirror([180,0,0])
         difference() {
             linear_extrude(10) polygon(points=[[0,0],[33,0],[0,40]]);
@@ -32,8 +34,8 @@ color("blue",1) {
             translate([17,-10,5])cylinder(6,18,18);
             translate([17,-10,-1])cylinder(12,16.5,16.5);
         }
-    }
-}
+    
+
 
 color("black",1) {
     translate([0,-58,-15])
@@ -64,8 +66,8 @@ color("red",1) {
             translate([0,0,-2]) cylinder(300,48,48);
             translate([0,0,20]) cylinder(300,52,52);
             translate([0,0,-6])cylinder(12,19,19);
-            rotate_extrude() translate([53.5,8,0]) square([2,2]);
-            rotate_extrude() translate([53.5,12,0]) square([2,2]);
+            rotate_extrude() translate([52.5,6,0]) square([3,3]);
+            rotate_extrude() translate([52.5,12,0]) square([3,3]);
             //rupe za disanje
             translate([0,0,275])
             for(b = [0 : 10 : 10])
@@ -111,7 +113,7 @@ difference() {
         cylinder(25, 16.4,16.4);
         translate([0,0,-5]) cylinder(5, 18, 18);
     }
-    rotate_extrude() translate([14.5,8,0]) square([2,3]);  //oring
+    rotate_extrude() translate([14.5,6,0]) square([2,3]);  //oring
     rotate_extrude() translate([14.5,12,0]) square([2,3]); //oring
     translate([0,0,-6]) cylinder(27, 3, 3); //rupa za gas
 }
@@ -130,7 +132,7 @@ difference() {
     translate([10,10,20]) cylinder(60, 14, 14);
     translate([10,10,85]) cylinder(60, 14, 14);
     translate([10,10,150]) cylinder(60, 14, 14);
-    rotate_extrude() translate([14.5,8,0]) square([2,3]); //oring
+    rotate_extrude() translate([14.5,6,0]) square([2,3]); //oring
     rotate_extrude() translate([14.5,12,0]) square([2,3]); //oring
 }
 
@@ -149,6 +151,7 @@ difference() {
     rotate_extrude() translate([14.5,4,0]) square([2,3]);  //oring
     translate([0,0,-46]) cylinder(60, 13, 13); //rupa za gas
 }
+
 
 color("magenta",1)
 translate ([0,29,-5])
