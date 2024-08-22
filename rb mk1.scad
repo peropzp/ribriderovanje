@@ -7,7 +7,7 @@ $fn = $preview ? 64 : 128;
      translate([69,0,-1]) cylinder(22, 16.5, 16.5); //celije levo
      translate([-69,0,-1]) cylinder(22, 16.5, 16.5); //desno
      translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
-     translate([0,-57,10]) cylinder(16, 29, 29); //p-port matica 
+     translate([0,-57,5]) cylinder(16, 29, 29); //p-port matica 
 }
 
 //osiguraci
@@ -64,7 +64,7 @@ color("red",1) {
                 translate([0,0,-5]) cylinder(5,57,57);
             }
             translate([0,0,-2]) cylinder(300,48,48);
-            translate([0,0,20]) cylinder(300,52,52);
+            translate([0,0,25]) cylinder(300,52,52);
             translate([0,0,-6])cylinder(12,19,19);
             rotate_extrude() translate([52.5,6,0]) square([3,3]);
             rotate_extrude() translate([52.5,12,0]) square([3,3]);
@@ -83,7 +83,7 @@ color("red",1) {
 
 //resetka
 color("silver",1) {
-    for(a = [20 : 235 : 255])
+    for(a = [25 : 230 : 255])
         translate([0,29,a])
         union() {
             difference() {
