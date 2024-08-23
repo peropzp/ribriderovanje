@@ -19,7 +19,8 @@ parts :
 
 orings  :  
   2 x 104x3 https://polilas-webshop.com/o-ring-104x3/proizvod/437/
-  6 x 28x2.5 https://polilas-webshop.com/o-ring-28x25/proizvod/4197/
+  2 x 28x2.5 https://polilas-webshop.com/o-ring-28x25/proizvod/4197/
+  4 x 30x2.5 https://polilas-webshop.com/o-ring-30x25/proizvod/198/
   1 x 33x2.5 https://polilas-webshop.com/o-ring-33x25/proizvod/5371/
 
 p-port 
