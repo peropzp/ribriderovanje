@@ -3,7 +3,7 @@ $fn = $preview ? 64 : 128;
 //////////////////////////////////////////////////////////
 //export
 
-dsvBody();
+//dsvBody();
 //dsvPlug();
 //topPlate();
 //holderLeft();
@@ -18,10 +18,10 @@ dsvBody();
 //caseBase();
 
 
-/*
+
 ////////////////////////////////////////////////////////////
 //model
-translate([150,0,0]) color("purple",0.5) dsvBody();
+translate([150,0,0]) rotate([0,0,-90]) color("purple",1) dsvBody();
 translate([150,0,0]) color("blue",1) dsvPlug();
 color("cyan",1) topPlate();
 color("blue",1) translate([53,10,-10])  holderLeft();
@@ -34,8 +34,8 @@ color("silver",1) {
 color("green",1) translate ([-70,0,0]) plug(); 
 color("green",1) translate ([70,0,0]) sensors();
 
-translate([550,0,0]) rotate([0,-90,90]) color("silver",1) caseCylinder ();
-translate([150,0,500]) rotate([0,-90,90]) color("silver",1) caseBase();
+//translate([550,0,0]) rotate([0,-90,90]) color("silver",1) caseCylinder ();
+//translate([150,0,500]) rotate([0,-90,90]) color("silver",1) caseBase();
 color("magenta",1) {
     translate ([0,-57,0]) pPortMale();
     translate ([0,29,-5]) pPortMale();
@@ -79,7 +79,7 @@ translate([0,-50,320])
  linear_extrude(350) circle(50);
 ////////////////////////////////////////////////////////////////////////////
 
-*/
+
 ///////////////////////////////////////////////////////////////////////////
 //dsv
 module dsvBody() {
