@@ -2,21 +2,23 @@ $fn = $preview ? 64 : 128;
 
 //////////////////////////////////////////////////////////
 //export
-/*
-dsvBody();
-dsvPlug();
-topPlate();
-holderLeft();
-holderRight(); 
-scrubber();
-plug();
-sensors();
-pPortMale();
 
-grid();
-caseCylinder();
-caseBase();
-*/
+//dsvBody();
+//dsvPlug();
+//topPlate();
+//holderLeft();
+//holderRight(); 
+//scrubber();
+//plug();
+//sensors();
+//pPortMale();
+
+//grid();
+//caseCylinder();
+//caseBase();
+
+
+
 ////////////////////////////////////////////////////////////
 //model
 translate([150,0,0]) color("purple",0.5) dsvBody();
@@ -75,7 +77,7 @@ translate([0,50,320])
  linear_extrude(350) circle(50);
 translate([0,-50,320])
  linear_extrude(350) circle(50);
-
+////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -142,6 +144,7 @@ module dsvBody() {
 //////////////////////////////////////////////////////////////////////////////////
 //dsv cep
 module dsvPlug() {
+    color("green",1)
         difference() {
             union() {
                 cylinder(55, 19, 19);
@@ -149,9 +152,10 @@ module dsvPlug() {
             }
             rotate_extrude() translate([17.1,50,0]) square([2,3]); //oring
             translate([-4,15,-1]) cube([8,8,49]); //slic za sraf
+            translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
             translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
         }
-
+            
 }
 ///////////////////////////////////////////////////////////////////////////////////
  //poklopac 
@@ -247,16 +251,16 @@ module plug() {
 module sensors() {
     difference() {
         union() {
-            cylinder(220, 17.5,17.5);
+            cylinder(200, 17.5,17.5);
             translate([0,0,-5]) cylinder(5, 19, 19);
         }
         rotate_extrude() translate([15.6,6,0]) square([2,3]); //oring
-        rotate_extrude() translate([15.,12,0]) square([2,3]); //oring
-        translate([0,0,20]) cylinder(201, 14.5, 14.5);
+        rotate_extrude() translate([15.6,12,0]) square([2,3]); //oring
+        translate([0,0,20]) cylinder(231, 15.5, 15.5);
         translate([0,0,-6]) cylinder(27, 3, 3);
         translate([0,-10,20]) cylinder(60, 14, 14);
-        translate([0,-10,85]) cylinder(60, 14, 14);
-        translate([0,-10,150]) cylinder(60, 14, 14);
+        translate([0,-10,100]) cylinder(30, 14, 14);
+        translate([0,-10,150]) cylinder(30, 14, 14);
     }
 }
 ///////////////////////////////////////////////////////////////////////////////
