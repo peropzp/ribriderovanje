@@ -2,12 +2,15 @@ group() {
 	color([0, 0.501961, 0, 1]) {
 		difference() {
 			union() {
-				cylinder($fn = 64, $fa = 12, $fs = 2, h = 55, r1 = 19, r2 = 19, center = false);
+				cylinder($fn = 128, $fa = 12, $fs = 2, h = 55, r1 = 19, r2 = 19, center = false);
 				multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -7], [0, 0, 0, 1]]) {
-					cylinder($fn = 64, $fa = 12, $fs = 2, h = 7, r1 = 12, r2 = 19, center = false);
+					cylinder($fn = 128, $fa = 12, $fs = 2, h = 7, r1 = 12, r2 = 19, center = false);
 				}
 			}
-			rotate_extrude(angle = 360, convexity = 2, $fn = 64, $fa = 12, $fs = 2) {
+			multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 5], [0, 0, 0, 1]]) {
+				cylinder($fn = 128, $fa = 12, $fs = 2, h = 51, r1 = 13, r2 = 13, center = false);
+			}
+			rotate_extrude(angle = 360, convexity = 2, $fn = 128, $fa = 12, $fs = 2) {
 				multmatrix([[1, 0, 0, 17.1], [0, 1, 0, 50], [0, 0, 1, 0], [0, 0, 0, 1]]) {
 					square(size = [2, 3], center = false);
 				}
@@ -24,7 +27,7 @@ group() {
 			}
 			multmatrix([[1, 0, 0, 20], [0, 1, 0, 0], [0, 0, 1, -2], [0, 0, 0, 1]]) {
 				multmatrix([[0, 0, -1, 0], [0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1]]) {
-					cylinder($fn = 64, $fa = 12, $fs = 2, h = 40, r1 = 2, r2 = 2, center = false);
+					cylinder($fn = 128, $fa = 12, $fs = 2, h = 40, r1 = 2, r2 = 2, center = false);
 				}
 			}
 		}
