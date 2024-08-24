@@ -14,10 +14,11 @@ $fn = $preview ? 64 : 128;
 //pPortMale();
 
 //grid();
+//sieve();
 //caseCylinder();
 //caseBase();
 
-
+/*
 
 ////////////////////////////////////////////////////////////
 //model
@@ -79,7 +80,7 @@ translate([0,-50,320])
  linear_extrude(350) circle(50);
 ////////////////////////////////////////////////////////////////////////////
 
-
+*/
 ///////////////////////////////////////////////////////////////////////////
 //dsv
 module dsvBody() {
@@ -117,21 +118,6 @@ module dsvBody() {
                 translate([0,20,0]) cylinder(60, 8,8);
                 translate([-8,0,0]) cube([16,20,60]);
             }
-
-/*        translate([5,48,38]) rotate([-90,30,0])  //prsten za usnik
-            difference() {
-                union() {
-                    cylinder(12, 12,12);
-                    translate([0,20,0]) cylinder(12, 12,12);
-                    translate([-12,0,0]) cube([24,24,12]);
-                }
-                union() {
-                    cylinder(15, 10,10);
-                    translate([0,20,0]) cylinder(15, 10,10);
-                    translate([-10,0,0]) cube([20,20,15]);
-                }
-            }*/
-
         translate([0,15,5]) rotate([-90,0,0]) cylinder(20,2,2); //rupa za sraf
     }
 
@@ -145,6 +131,7 @@ module dsvPlug() {
                 cylinder(55, 19, 19);
                 translate([0,0,-7])cylinder(7, 12, 19);
             }
+            translate([0,0,5]) cylinder(51, 13, 13);
             rotate_extrude() translate([17.1,50,0]) square([2,3]); //oring
             translate([-4,15,-1]) cube([8,8,49]); //slic za sraf
             translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
@@ -225,6 +212,21 @@ module grid() {
             rotate([0,0,a]) translate([3,-1.5,0]) cube([48,3,2]);
         }
     }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+//sito
+module sieve() {
+        difference() {
+            cylinder(0.5,51.5,51.5);
+            translate([0,0,-1]) cylinder(4,3,3);
+            for(a = [8 : 1.5 : 49]) {
+                for(b = [0 : 90/a : 360]) {
+                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.7,0.7);
+                }
+            }
+        }
 }
 
 
