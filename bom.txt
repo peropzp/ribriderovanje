@@ -25,3 +25,18 @@ orings  :
 
 p-port 
   2 x connector https://tecme.de/frame_start1.htm - P0102
+
+Hoses
+  2 x breathing hose 40-45cm (36mm/44mm)  https://tecme.de/frame_start1.htm HS0075
+                              
+  2 x ss hose weights
+
+Mushroom vlaves
+  2 x mushroom valve   https://mlinke.eu/bov-konektory/4034-grzybek-wydechowy-klapon-do-hammerhead-dsv-bov-iqsub.html
+                       https://tecme.de/frame_start1.htm Dräger mushroom Valves (35mm diameter)
+
+Fisher connector with cable https://www.aliexpress.com/item/1005006094791772.html?spm=a2g0o.order_list.order_list_main.5.2af31802i8QHVQ 1f 7 pin male connector unshielded cable
+
+SMB male connectors :
+  3 x smb male print connector https://www.mgelectronic.rs/smb-uti%C4%8Dnica-print
+
