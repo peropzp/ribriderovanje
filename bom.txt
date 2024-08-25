@@ -35,7 +35,9 @@ Mushroom vlaves
   2 x mushroom valve   https://mlinke.eu/bov-konektory/4034-grzybek-wydechowy-klapon-do-hammerhead-dsv-bov-iqsub.html
                        https://tecme.de/frame_start1.htm Dräger mushroom Valves (35mm diameter)
 
-Fisher connector with cable https://www.aliexpress.com/item/1005006094791772.html?spm=a2g0o.order_list.order_list_main.5.2af31802i8QHVQ 1f 7 pin male connector unshielded cable
+1 x Fisher connector with cable https://www.aliexpress.com/item/1005006094791772.html?spm=a2g0o.order_list.order_list_main.5.2af31802i8QHVQ 1f 7 pin male connector unshielded cable
+1 x pg7 cable gland
+1 x bcd type connector
 
 SMB male connectors :
   3 x smb male print connector https://www.mgelectronic.rs/smb-uti%C4%8Dnica-print
