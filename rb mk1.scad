@@ -19,8 +19,8 @@ $fn = $preview ? 64 : 128;
 //caseCylinder();
 //caseBase();
 
-/*
 
+/*
 ////////////////////////////////////////////////////////////
 //model
 translate([150,0,0]) rotate([0,0,-90]) color("purple",1) dsvBody();
@@ -56,7 +56,7 @@ module pPortFemale() {
         translate([0,0,-1]) cylinder(18,16,16);
     }
 }
-
+/*
 //oklop
 color("silver",0.5) {
     union() {
@@ -156,12 +156,17 @@ module topPlate() {
 //osiguraci
 module holderLeft() {
     difference() {
-        linear_extrude(10) polygon(points=[[0,0],[33,0],[0,40]]);
-        translate([13,15,-1]) cylinder(12,2,2); //rupa za sraf
+        linear_extrude(10) polygon(points=[[0,0],[35,0],[0,40]]);
+        translate([9,23,-1]) cylinder(12,2,2); //rupa za sraf
+        translate([18,13,-1]) cylinder(12,2,2); //rupa za sraf
+        translate([9,13,-1]) cylinder(12,2,2); //rupa za sraf
         translate([-52,19,5])cylinder(6,57,57);
         translate([-52,19,-1])cylinder(12,55,55);
         translate([18,-10,5])cylinder(6,19,19);
         translate([18,-10,-1])cylinder(12,17.5,17.5);
+        translate([28,-7,-1]) rotate([0,0,45]) cube(12); //coskovi
+        translate([0,-7,-1]) rotate([0,0,45]) cube(12);
+        translate([0,23,-1]) rotate([0,0,45]) cube(12);
     }
 }   
 
@@ -181,6 +186,17 @@ module scrubber() {
         translate([0,0,-6])cylinder(12,19,19);
         rotate_extrude() translate([52.5,6,0]) square([3,3]);
         rotate_extrude() translate([52.5,12,0]) square([3,3]);
+        //nareckani obod
+        difference() {
+            translate([0,0,-6]) cylinder(7, 60, 60);
+            translate([0,0,-7]) cylinder(9, 55,55);
+                for(a = [0 : 10 : 360]) {
+                    if((a != 10) && (a!=20) && (a!=30)
+                        &&(a != 200) && (a!=210) && (a!=220))
+                        rotate([0,0,a]) translate([54,-2.5,-6]) cube(7,5,7);
+                }
+        }
+
         //rupe za disanje
         translate([0,0,275])
         for(b = [10 : 10 : 10])
@@ -192,6 +208,7 @@ module scrubber() {
                                 rotate([0,90,0]) cylinder(10,5,5);
                 }
     }
+
 }
 //////////////////////////////////////////////////////////////////////////////
 //resetka
@@ -244,13 +261,8 @@ module scruberTool() {
 //cep
 module plug() {
     difference() {
-        union() {
-            cylinder(25, 17.5,17.5);
-            translate([0,0,-5]) cylinder(5, 19, 19);
-        }
-        rotate_extrude() translate([15.6,6,0]) square([2,3]);  //oring
-        rotate_extrude() translate([15.6,12,0]) square([2,3]); //oring
-        translate([0,0,-6]) cylinder(27, 3, 3); //rupa za gas
+        sensors();
+        translate([0,0,20]) cylinder(200,20,20);
     }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -265,6 +277,14 @@ module sensors() {
         rotate_extrude() translate([15.6,12,0]) square([2,3]); //oring
         translate([0,0,20]) cylinder(231, 15.5, 15.5);
         translate([0,0,-6]) cylinder(27, 3, 3);
+        difference() {
+            translate([0,0,-6]) cylinder(7, 20, 20);
+            translate([0,0,-6]) cylinder(7, 17.5,17.5);
+                for(a = [0 : 30 : 330]) {
+                    if((a != 240) && (a!=270)&& (a!=300))
+                        rotate([0,0,a]) translate([17,-2.5,-6]) cube(5,5,7);
+                }
+        }
         translate([0,-10,20]) cylinder(60, 14, 14);
         translate([0,-10,100]) cylinder(30, 14, 14);
         translate([0,-10,150]) cylinder(30, 14, 14);
