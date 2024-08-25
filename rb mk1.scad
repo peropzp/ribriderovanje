@@ -20,7 +20,7 @@ $fn = $preview ? 64 : 128;
 //caseBase();
 
 
-/*
+
 ////////////////////////////////////////////////////////////
 //model
 translate([150,0,0]) rotate([0,0,-90]) color("purple",1) dsvBody();
@@ -56,7 +56,7 @@ module pPortFemale() {
         translate([0,0,-1]) cylinder(18,16,16);
     }
 }
-/*
+
 //oklop
 color("silver",0.5) {
     union() {
@@ -74,14 +74,32 @@ color("silver",0.5) {
     }
 }
 
+module regulator() {
+    cylinder(50,13,13);
+    translate([-45,0,0]) rotate([0,90,00]) cylinder(85,20,20);
+}
+
+
+//tank();
+module tank() {
+    translate([0,0,50]) union() {
+        sphere(r = 50);
+        cylinder(270,50,50);
+        translate([0,0,270]) sphere(r = 50);
+        translate([0,0,310]) cylinder(35,15,15);
+        translate([0,30,345]) rotate([90,0,0]) cylinder(85,15,15);
+        translate([0,-15,345]) rotate([90,0,0]) cylinder(40,20,20);
+        translate([0,60,345]) rotate([90,0,0]) regulator();
+    }
+}
 //boce
-translate([0,50,320])
- linear_extrude(350) circle(50);
-translate([0,-50,320])
- linear_extrude(350) circle(50);
+translate([0,50,720]) rotate([180,0,-90]) tank();
+
+translate([0,-50,720]) rotate([180,0,-90]) tank();
+
 ////////////////////////////////////////////////////////////////////////////
 
-*/
+
 ///////////////////////////////////////////////////////////////////////////
 //dsv
 module dsvBody() {
