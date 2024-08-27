@@ -261,7 +261,7 @@ module sieve() {
             translate([0,0,-1]) cylinder(4,3,3);
             for(a = [8 : 1.5 : 49]) {
                 for(b = [0 : 90/a : 360]) {
-                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.7,0.7);
+                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.65,0.65,$fn=6);
                 }
             }
         }
