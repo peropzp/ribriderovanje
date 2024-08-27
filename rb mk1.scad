@@ -19,8 +19,14 @@ $fn = $preview ? 64 : 128;
 //caseCylinder();
 //caseBase();
 
+//2d
+//grid2d();
+//sieve2d();
+//caseCylinder2d();
+caseBase2d();
 
 
+/*
 ////////////////////////////////////////////////////////////
 //model
 translate([150,0,0]) rotate([0,0,-90]) color("purple",1) dsvBody();
@@ -81,7 +87,7 @@ translate([0,-50,720]) rotate([180,0,-90]) tank();
 
 ////////////////////////////////////////////////////////////////////////////
 
-
+*/
 /////////////////////////////////////////////////////////////////////////////
 module regulator() {
     cylinder(50,13,13);
@@ -251,6 +257,26 @@ module grid() {
         }
     }
 }
+//resetka2d
+module grid2d() {
+    union() {
+        difference() {
+            circle(51.5);
+            circle(49);
+        }
+        difference() {
+            circle(8);
+            circle(3);
+        }
+        difference() {
+            circle(30);
+            circle(28);
+        }
+        for(a = [0 : 30 : 330]) {
+            rotate([0,0,a]) translate([3,-1.5,0]) square([48,3]);
+        }
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -261,7 +287,19 @@ module sieve() {
             translate([0,0,-1]) cylinder(4,3,3);
             for(a = [8 : 1.5 : 49]) {
                 for(b = [0 : 90/a : 360]) {
-                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.65,0.65,$fn=6);
+                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.65,0.65, $fn=6);
+                }
+            }
+        }
+}
+
+module sieve2d() {
+        difference() {
+            circle(51.5);
+            circle(3);
+            for(a = [8 : 1.5 : 49]) {
+                for(b = [0 : 90/a : 360]) {
+                  rotate([0,0,b+a]) translate([a,0,0]) circle(0.65, $fn=6);
                 }
             }
         }
@@ -337,6 +375,17 @@ module caseCylinder (){
         }
     }
 }
+
+module caseCylinder2d (){
+    difference() {
+        square([559,300]);
+        for(a = [25 : 30 : 545]) {
+            for(b = [30 : 30 : 270]) {
+                translate([a,b,0]) circle(10);
+            }
+        }
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////
 module caseBase() {
     difference() {
@@ -345,6 +394,16 @@ module caseBase() {
             rotate([0,0,a + 15]) translate([70,0,-5]) cylinder(10, 12, 12);
         translate([-40,0,-5]) cylinder(10, 15, 15);
         translate([40,0,-5]) cylinder(10, 15, 15);
+
+    }
+}
+module caseBase2d() {
+    difference() {
+        circle(89);
+        for(a = [0 : 30 : 350])
+            rotate([0,0,a + 15]) translate([70,0,0]) circle(12);
+        translate([-40,0,0]) circle(15);
+        translate([40,0,0]) circle(15);
 
     }
 }
