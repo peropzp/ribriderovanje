@@ -8,7 +8,7 @@ $fn = $preview ? 64 : 128;
 //topPlate();
 //holderLeft();
 //holderRight(); 
-//scrubber();
+scrubber();
 //plug();
 //sensors();
 //pPortMale();
@@ -23,7 +23,7 @@ $fn = $preview ? 64 : 128;
 //grid2d();
 //sieve2d();
 //caseCylinder2d();
-caseBase2d();
+//caseBase2d();
 
 
 /*
@@ -36,8 +36,8 @@ color("blue",1) translate([53,10,-10])  holderLeft();
 color("blue",1) translate([-53,10,-10]) holderRight(); 
 color("red",1)    translate([0,29,0]) scrubber();
 color("silver",1) {
-    translate([0,29,25]) grid();
-    translate([0,29,265]) grid();
+    translate([0,29,20]) grid();
+    translate([0,29,278]) grid();
 }
 color("green",1) translate ([-70,0,0]) plug(); 
 color("green",1) translate ([70,0,0]) sensors();
@@ -204,11 +204,11 @@ module holderRight() {
 module scrubber() {
     difference() {
         union () {
-            cylinder(285,55,55);
+            cylinder(295,55,55);
             translate([0,0,-5]) cylinder(5,57,57);
         }
         translate([0,0,-2]) cylinder(300,48,48);
-        translate([0,0,25]) cylinder(300,52,52);
+        translate([0,0,20]) cylinder(300,52,52);
         translate([0,0,-6])cylinder(12,19,19);
         rotate_extrude() translate([52.5,6,0]) square([3,3]);
         rotate_extrude() translate([52.5,12,0]) square([3,3]);
@@ -224,7 +224,7 @@ module scrubber() {
         }
 
         //rupe za disanje
-        translate([0,0,275])
+        translate([0,0,287])
         for(b = [10 : 10 : 10])
             translate([0,0,b])
                 union() {
