@@ -4,11 +4,14 @@ $fn = $preview ? 64 : 128;
 //export
 
 //dsvBody();
+//dsvMouthpiece();
 //dsvPlug();
 //topPlate();
 //holderLeft();
 //holderRight(); 
-scrubber();
+//scrubber();
+//scrubberBase();
+//scrubberTube();
 //plug();
 //sensors();
 //pPortMale();
@@ -37,7 +40,7 @@ color("blue",1) translate([-53,10,-10]) holderRight();
 color("red",1)    translate([0,29,0]) scrubber();
 color("silver",1) {
     translate([0,29,20]) grid();
-    translate([0,29,278]) grid();
+    translate([0,29,280]) grid();
 }
 color("green",1) translate ([-70,0,0]) plug(); 
 color("green",1) translate ([70,0,0]) sensors();
@@ -87,7 +90,7 @@ translate([0,-50,720]) rotate([180,0,-90]) tank();
 
 ////////////////////////////////////////////////////////////////////////////
 
-*/
+
 /////////////////////////////////////////////////////////////////////////////
 module regulator() {
     cylinder(50,13,13);
@@ -107,30 +110,44 @@ module tank() {
         translate([0,60,345]) rotate([90,0,0]) regulator();
     }
 }
-
+*/
 ///////////////////////////////////////////////////////////////////////////
 //dsv
-module dsvBody() {
+module dsvMouthpiece() {
+
     difference() {
         union() {
-            cylinder(80, 23, 23); //tuba za ventil
-            translate([0,25,40]) cylinder(60, 23, 23); //tuba za crevo 1
-            translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
-            translate([-23,-25,50]) cube([46, 50, 32]); //spoj tuba za creva
-            translate([-23,0,40]) cube([46, 25, 32]); //dodatak za duzu tubu
             translate([5,15,38]) rotate([-90,30,0])  //usnik
                 union() {
                     cylinder(50, 11,11);
                     translate([0,20,0]) cylinder(50, 11,11);
                     translate([-11,0,0]) cube([22,20,50]);
-//                    translate([0,0,49]) { //prsten od usnika
-//                        cylinder(2, 11,11);
-//                        translate([0,20,0]) cylinder(2, 11,11);
-//                        translate([-11,0,0]) cube([22,22,2]);
-//                    }
+/*                    translate([0,0,49]) { //prsten od usnika
+                        cylinder(2, 11,11);
+                        translate([0,20,0]) cylinder(2, 11,11);
+                        translate([-11,0,0]) cube([22,22,2]);
+                    }
+                    */
             }
-            translate([-10,20,0]) cube([20,5,25]); //kocka za sraf
+        }
+        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
+            union() {
+                cylinder(60, 8,8);
+                translate([0,20,0]) cylinder(60, 8,8);
+                translate([-8,0,0]) cube([16,20,60]);
+            }
+    }
 
+}
+//////////////////////////////////////////////////////////////////////////////////
+module dsvBody() {
+
+    difference() {
+        union() {
+            translate([-23,-23,0]) cube([46,46,82]); //tuba za ventil
+            translate([0,25,50]) cylinder(50, 23, 23); //tuba za crevo 1
+            translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
+            translate([-23,-25,50]) cube([46, 50, 32]);
         }
         translate([0,0,-1]) cylinder(76, 16, 16); //rupa za venti l
         translate([0,0,-1]) cylinder(56, 19.1, 19.1); //rupa za venti l
@@ -138,14 +155,28 @@ module dsvBody() {
         translate([0,25,55]) cylinder(46, 19, 19); //rupa za crevo 1
         translate([0,-25,81]) cylinder(21, 20, 20); //rupa za pecurku 2
         translate([0,-25,55]) cylinder(46, 19, 19); //rupa za crevo 2
-
-        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
-            union() {
-                cylinder(60, 8,8);
-                translate([0,20,0]) cylinder(60, 8,8);
-                translate([-8,0,0]) cube([16,20,60]);
+        
+            translate([5,15,38]) rotate([-90,30,0])  //usnik
+                union() {
+                    cylinder(50, 11,11);
+                    translate([0,20,0]) cylinder(50, 11,11);
+                    translate([-11,0,0]) cube([22,20,50]);
+                    translate([0,0,49]) { //prsten od usnika
+                        cylinder(2, 11,11);
+                        translate([0,20,0]) cylinder(2, 11,11);
+                        translate([-11,0,0]) cube([22,22,2]);
+                    }
             }
+//        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
+//            union() {
+//                cylinder(60, 8,8);
+//                translate([0,20,0]) cylinder(60, 8,8);
+//                translate([-8,0,0]) cube([16,20,60]);
+//            }
+
         translate([0,15,5]) rotate([-90,0,0]) cylinder(20,2,2); //rupa za sraf
+//                    translate([0,-70,0]) cube(140);
+    
     }
 
 }
@@ -202,17 +233,28 @@ module holderRight() {
 /////////////////////////////////////////////////////////////////////////////
 //scrubber
 module scrubber() {
+    color("red",1) scrubberBase();
+    color("green",0.5) translate([0,0,13]) scrubberTube();
+}
+module scrubberBase() {
+
     difference() {
         union () {
-            cylinder(295,55,55);
+            cylinder(20,55,55);
             translate([0,0,-5]) cylinder(5,57,57);
         }
-        translate([0,0,-2]) cylinder(300,48,48);
-        translate([0,0,20]) cylinder(300,52,52);
+        translate([0,0,13]) 
+            difference() {
+                cylinder(20,56,56);
+                translate([0,0,-1]) cylinder(22,52,52);
+            }
+       
+        translate([0,0,-2]) cylinder(30,46,46);
+        translate([0,0,20]) cylinder(30,52,52);
         translate([0,0,-6])cylinder(12,19,19);
-        rotate_extrude() translate([52.5,6,0]) square([3,3]);
-        rotate_extrude() translate([52.5,12,0]) square([3,3]);
-        //nareckani obod
+        rotate_extrude() translate([52.5,3,0]) square([3,3]);
+        rotate_extrude() translate([52.5,8,0]) square([3,3]);
+         //nareckani obod
         difference() {
             translate([0,0,-6]) cylinder(7, 60, 60);
             translate([0,0,-7]) cylinder(9, 55,55);
@@ -222,9 +264,16 @@ module scrubber() {
                         rotate([0,0,a]) translate([54,-2.5,-6]) cube(7,5,7);
                 }
         }
+    }
+}
+module scrubberTube() {
 
-        //rupe za disanje
-        translate([0,0,287])
+    difference() {
+        union () {
+            cylinder(280,55,55);
+        }
+        translate([0,0,20]) cylinder(300,52,52);
+        translate([0,0,272])
         for(b = [10 : 10 : 10])
             translate([0,0,b])
                 union() {
@@ -308,7 +357,7 @@ module sieve2d() {
 
 //////////////////////////////////////////////////////////////////////////////
 //sabijac
-module scruberTool() {
+module scrubberTool() {
         difference() {
             cylinder(100,51.5,51.5);
             translate([0,0,-1]) cylinder(102,3,3);
@@ -319,23 +368,21 @@ module scruberTool() {
 //cep
 module plug() {
     difference() {
-        sensors();
-        translate([0,0,20]) cylinder(200,20,20);
-    }
-}
-///////////////////////////////////////////////////////////////////////////////
-//celije
-module sensors() {
-    difference() {
         union() {
-            cylinder(200, 17.5,17.5);
+            cylinder(20, 17.5,17.5);
             translate([0,0,-5]) cylinder(5, 19, 19);
         }
-        rotate_extrude() translate([15.6,6,0]) square([2,3]); //oring
-        rotate_extrude() translate([15.6,12,0]) square([2,3]); //oring
-        translate([0,0,20]) cylinder(231, 15.5, 15.5);
+        translate([0,0,13]) 
+            difference() {
+                cylinder(20,18,18);
+                translate([0,0,-1]) cylinder(22,15.5,15.5);
+            }
+
+        rotate_extrude() translate([15.6,3,0]) square([2,3]); //oring
+        rotate_extrude() translate([15.6,8,0]) square([2,3]); //oring
         translate([0,0,-6]) cylinder(27, 3, 3);
-        difference() {
+        
+        difference() { //grooves
             translate([0,0,-6]) cylinder(7, 20, 20);
             translate([0,0,-6]) cylinder(7, 17.5,17.5);
                 for(a = [0 : 30 : 330]) {
@@ -343,6 +390,14 @@ module sensors() {
                         rotate([0,0,a]) translate([17,-2.5,-6]) cube(5,5,7);
                 }
         }
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+//celije
+module sensors() {
+    difference() {
+        cylinder(200, 17.5,17.5);
+        translate([0,0,-1]) cylinder(202, 15.5, 15.5);
         translate([0,-10,20]) cylinder(60, 14, 14);
         translate([0,-10,100]) cylinder(30, 14, 14);
         translate([0,-10,150]) cylinder(30, 14, 14);
