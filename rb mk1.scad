@@ -122,12 +122,6 @@ module dsvMouthpiece() {
                     cylinder(50, 11,11);
                     translate([0,20,0]) cylinder(50, 11,11);
                     translate([-11,0,0]) cube([22,20,50]);
-/*                    translate([0,0,49]) { //prsten od usnika
-                        cylinder(2, 11,11);
-                        translate([0,20,0]) cylinder(2, 11,11);
-                        translate([-11,0,0]) cube([22,22,2]);
-                    }
-                    */
             }
         }
         translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
@@ -144,7 +138,7 @@ module dsvBody() {
 
     difference() {
         union() {
-            translate([-23,-23,0]) cube([46,46,82]); //tuba za ventil
+            translate([-23,-23,0]) cube([46,48,82]); //tuba za ventil
             translate([0,25,50]) cylinder(50, 23, 23); //tuba za crevo 1
             translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
             translate([-23,-25,50]) cube([46, 50, 32]);
@@ -156,25 +150,14 @@ module dsvBody() {
         translate([0,-25,81]) cylinder(21, 20, 20); //rupa za pecurku 2
         translate([0,-25,55]) cylinder(46, 19, 19); //rupa za crevo 2
         
-            translate([5,15,38]) rotate([-90,30,0])  //usnik
-                union() {
-                    cylinder(50, 11,11);
-                    translate([0,20,0]) cylinder(50, 11,11);
-                    translate([-11,0,0]) cube([22,20,50]);
-                    translate([0,0,49]) { //prsten od usnika
-                        cylinder(2, 11,11);
-                        translate([0,20,0]) cylinder(2, 11,11);
-                        translate([-11,0,0]) cube([22,22,2]);
-                    }
-            }
-//        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
-//            union() {
-//                cylinder(60, 8,8);
-//                translate([0,20,0]) cylinder(60, 8,8);
-//                translate([-8,0,0]) cube([16,20,60]);
-//            }
+        translate([5,15,38]) rotate([-90,30,0])  //rupa za usnik
+            union() {
+                cylinder(12, 11,11);
+                translate([0,20,0]) cylinder(12, 11,11);
+                translate([-11,0,0]) cube([22,20,12]);
+        }
 
-        translate([0,15,5]) rotate([-90,0,0]) cylinder(20,2,2); //rupa za sraf
+        translate([0,15,5]) rotate([-90,0,0]) cylinder(12,2,2); //rupa za sraf
 //                    translate([0,-70,0]) cube(140);
     
     }
@@ -245,15 +228,14 @@ module scrubberBase() {
         }
         translate([0,0,13]) 
             difference() {
-                cylinder(20,56,56);
-                translate([0,0,-1]) cylinder(22,52,52);
+                cylinder(8,56,56);
+                translate([0,0,-1]) cylinder(10,52,52);
             }
        
         translate([0,0,-2]) cylinder(30,46,46);
-        translate([0,0,20]) cylinder(30,52,52);
-        translate([0,0,-6])cylinder(12,19,19);
-        rotate_extrude() translate([52.5,3,0]) square([3,3]);
-        rotate_extrude() translate([52.5,8,0]) square([3,3]);
+        translate([0,0,-6])cylinder(7,19,19); //rupa za pport
+        rotate_extrude() translate([52.5,3,0]) square([3,3]); //oring
+        rotate_extrude() translate([52.5,8,0]) square([3,3]); // oring
          //nareckani obod
         difference() {
             translate([0,0,-6]) cylinder(7, 60, 60);
@@ -272,16 +254,14 @@ module scrubberTube() {
         union () {
             cylinder(280,55,55);
         }
-        translate([0,0,20]) cylinder(300,52,52);
+        translate([0,0,-1]) cylinder(282,52,52);
         translate([0,0,272])
-        for(b = [10 : 10 : 10])
-            translate([0,0,b])
-                union() {
-                    for(a = [0 : 15 : 350]) 
-                        rotate([0,0,a + b])
-                            translate([50,0,-10]) 
-                                rotate([0,90,0]) cylinder(10,5,5);
-                }
+            union() {
+                for(a = [0 : 15 : 350]) 
+                    rotate([0,0,a])
+                        translate([50,0,0]) 
+                            rotate([0,90,0]) cylinder(10,5,5);
+            }
     }
 
 }
