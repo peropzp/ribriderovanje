@@ -114,6 +114,31 @@ module tank() {
 */
 ///////////////////////////////////////////////////////////////////////////
 //dsv
+
+//dsv();
+module dsv() {
+    color("green",1) difference() {
+        dsvBody();
+        translate([0,-50,-10]) cube(123);
+    }
+    
+    color("blue",1) difference() {
+        translate([0,5,0]) dsvMouthpiece();
+        translate([0,20,10]) cube([30,100,40]);
+    }
+
+    color("cyan",1) difference() {
+        translate([0,-25,110]) rotate([0,180,0]) hoseConnector();
+        translate([0,-47,75]) cube(44);
+    }
+    
+    color("magenta",1) difference() {
+        dsvPlug();
+        translate([0,-19,-6]) cube([20,38,61]);
+    }
+
+}
+    
 module dsvMouthpiece() {
 
     difference() {
@@ -139,7 +164,7 @@ module dsvBody() {
 
     difference() {
         union() {
-            translate([-25,-25,0]) cube([50, 50, 50]); //tuba za ventil
+            translate([-25,-23,0]) cube([50, 50, 50]); //tuba za ventil
             translate([0,25,50]) cylinder(35, 25, 25); //tuba za crevo 1
             translate([0,-25,50]) cylinder(35, 25, 25); //tuba za crevo 2
             translate([-25,-25,50]) cube([50, 50, 35]);
@@ -151,17 +176,20 @@ module dsvBody() {
         translate([0,-25,75]) cylinder(21, 22, 22); //rupa za pecurku 2
         translate([0,-25,55]) cylinder(46, 21, 21); //rupa za crevo 2
         
-        translate([5,15,38]) rotate([-90,30,0])  //rupa za usnik
+        translate([5,19.5,38]) rotate([-90,30,0])  //rupa za usnik
             union() {
                 cylinder(12, 11,11);
                 translate([0,20,0]) cylinder(12, 11,11);
                 translate([-11,0,0]) cube([22,20,12]);
+                translate([0,0,-5]) {
+                    cylinder(20, 8,8);
+                    translate([0,20,0]) cylinder(60, 8,8);
+                    translate([-8,0,0]) cube([16,20,60]);
+                }
         }
-
-        translate([0,15,5]) rotate([-90,0,0]) cylinder(12,2,2); //rupa za sraf
-//                    translate([0,-70,0]) cube(140);
-    
+        translate([0,15,5]) rotate([-90,0,0]) cylinder(13,2,2); //rupa za sraf
     }
+
 }
 
 module hoseConnector() {
@@ -176,41 +204,9 @@ module hoseConnector() {
     }
 }
 
-/*
-module dsvBody() {
-
-    difference() {
-        union() {
-            translate([-23,-23,0]) cube([46,48,82]); //tuba za ventil
-            translate([0,25,50]) cylinder(50, 23, 23); //tuba za crevo 1
-            translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
-            translate([-23,-25,50]) cube([46, 50, 32]);
-        }
-        translate([0,0,-1]) cylinder(76, 16, 16); //rupa za venti l
-        translate([0,0,-1]) cylinder(56, 19.1, 19.1); //rupa za venti l
-        translate([0,25,81]) cylinder(21, 20, 20); //rupa za pecurku 1
-        translate([0,25,55]) cylinder(46, 19, 19); //rupa za crevo 1
-        translate([0,-25,81]) cylinder(21, 20, 20); //rupa za pecurku 2
-        translate([0,-25,55]) cylinder(46, 19, 19); //rupa za crevo 2
-        
-        translate([5,15,38]) rotate([-90,30,0])  //rupa za usnik
-            union() {
-                cylinder(12, 11,11);
-                translate([0,20,0]) cylinder(12, 11,11);
-                translate([-11,0,0]) cube([22,20,12]);
-        }
-
-        translate([0,15,5]) rotate([-90,0,0]) cylinder(12,2,2); //rupa za sraf
-//                    translate([0,-70,0]) cube(140);
-    
-    }
-
-}
-*/
 //////////////////////////////////////////////////////////////////////////////////
 //dsv cep
 module dsvPlug() {
-    color("green",1)
         difference() {
             union() {
                 cylinder(55, 19, 19);
