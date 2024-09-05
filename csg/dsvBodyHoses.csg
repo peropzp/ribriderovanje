@@ -1,0 +1,15 @@
+group() {
+	difference() {
+		union() {
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 2, r1 = 23, r2 = 23, center = false);
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 35, r1 = 22, r2 = 22, center = false);
+		}
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -1], [0, 0, 0, 1]]) {
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 37, r1 = 19, r2 = 19, center = false);
+		}
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -1], [0, 0, 0, 1]]) {
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 34, r1 = 20, r2 = 20, center = false);
+		}
+	}
+}
+

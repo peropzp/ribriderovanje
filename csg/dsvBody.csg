@@ -1,43 +1,43 @@
 group() {
 	difference() {
 		union() {
-			multmatrix([[1, 0, 0, -23], [0, 1, 0, -23], [0, 0, 1, 0], [0, 0, 0, 1]]) {
-				cube(size = [46, 48, 82], center = false);
+			multmatrix([[1, 0, 0, -25], [0, 1, 0, -25], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+				cube(size = [50, 50, 50], center = false);
 			}
 			multmatrix([[1, 0, 0, 0], [0, 1, 0, 25], [0, 0, 1, 50], [0, 0, 0, 1]]) {
-				cylinder($fn = 64, $fa = 12, $fs = 2, h = 50, r1 = 23, r2 = 23, center = false);
+				cylinder($fn = 128, $fa = 12, $fs = 2, h = 35, r1 = 25, r2 = 25, center = false);
 			}
 			multmatrix([[1, 0, 0, 0], [0, 1, 0, -25], [0, 0, 1, 50], [0, 0, 0, 1]]) {
-				cylinder($fn = 64, $fa = 12, $fs = 2, h = 50, r1 = 23, r2 = 23, center = false);
+				cylinder($fn = 128, $fa = 12, $fs = 2, h = 35, r1 = 25, r2 = 25, center = false);
 			}
-			multmatrix([[1, 0, 0, -23], [0, 1, 0, -25], [0, 0, 1, 50], [0, 0, 0, 1]]) {
-				cube(size = [46, 50, 32], center = false);
+			multmatrix([[1, 0, 0, -25], [0, 1, 0, -25], [0, 0, 1, 50], [0, 0, 0, 1]]) {
+				cube(size = [50, 50, 35], center = false);
 			}
 		}
 		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -1], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 76, r1 = 16, r2 = 16, center = false);
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 76, r1 = 16, r2 = 16, center = false);
 		}
 		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -1], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 56, r1 = 19.1, r2 = 19.1, center = false);
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 56, r1 = 19.1, r2 = 19.1, center = false);
 		}
-		multmatrix([[1, 0, 0, 0], [0, 1, 0, 25], [0, 0, 1, 81], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 21, r1 = 20, r2 = 20, center = false);
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 25], [0, 0, 1, 75], [0, 0, 0, 1]]) {
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 21, r1 = 22, r2 = 22, center = false);
 		}
 		multmatrix([[1, 0, 0, 0], [0, 1, 0, 25], [0, 0, 1, 55], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 46, r1 = 19, r2 = 19, center = false);
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 46, r1 = 21, r2 = 21, center = false);
 		}
-		multmatrix([[1, 0, 0, 0], [0, 1, 0, -25], [0, 0, 1, 81], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 21, r1 = 20, r2 = 20, center = false);
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, -25], [0, 0, 1, 75], [0, 0, 0, 1]]) {
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 21, r1 = 22, r2 = 22, center = false);
 		}
 		multmatrix([[1, 0, 0, 0], [0, 1, 0, -25], [0, 0, 1, 55], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 46, r1 = 19, r2 = 19, center = false);
+			cylinder($fn = 128, $fa = 12, $fs = 2, h = 46, r1 = 21, r2 = 21, center = false);
 		}
 		multmatrix([[1, 0, 0, 5], [0, 1, 0, 15], [0, 0, 1, 38], [0, 0, 0, 1]]) {
 			multmatrix([[0.866025, -0.5, 0, 0], [0, 0, 1, 0], [-0.5, -0.866025, 0, 0], [0, 0, 0, 1]]) {
 				union() {
-					cylinder($fn = 64, $fa = 12, $fs = 2, h = 12, r1 = 11, r2 = 11, center = false);
+					cylinder($fn = 128, $fa = 12, $fs = 2, h = 12, r1 = 11, r2 = 11, center = false);
 					multmatrix([[1, 0, 0, 0], [0, 1, 0, 20], [0, 0, 1, 0], [0, 0, 0, 1]]) {
-						cylinder($fn = 64, $fa = 12, $fs = 2, h = 12, r1 = 11, r2 = 11, center = false);
+						cylinder($fn = 128, $fa = 12, $fs = 2, h = 12, r1 = 11, r2 = 11, center = false);
 					}
 					multmatrix([[1, 0, 0, -11], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
 						cube(size = [22, 20, 12], center = false);
@@ -47,7 +47,7 @@ group() {
 		}
 		multmatrix([[1, 0, 0, 0], [0, 1, 0, 15], [0, 0, 1, 5], [0, 0, 0, 1]]) {
 			multmatrix([[1, 0, 0, 0], [0, 0, 1, 0], [0, -1, 0, 0], [0, 0, 0, 1]]) {
-				cylinder($fn = 64, $fa = 12, $fs = 2, h = 12, r1 = 2, r2 = 2, center = false);
+				cylinder($fn = 128, $fa = 12, $fs = 2, h = 12, r1 = 2, r2 = 2, center = false);
 			}
 		}
 	}
