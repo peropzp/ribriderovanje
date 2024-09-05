@@ -138,6 +138,36 @@ module dsvBody() {
 
     difference() {
         union() {
+            translate([-25,-25,0]) cube([50, 50, 50]); //tuba za ventil
+            translate([0,25,50]) cylinder(35, 25, 25); //tuba za crevo 1
+            translate([0,-25,50]) cylinder(35, 25, 25); //tuba za crevo 2
+            translate([-25,-25,50]) cube([50, 50, 35]);
+        }
+        translate([0,0,-1]) cylinder(76, 16, 16); //rupa za venti l
+        translate([0,0,-1]) cylinder(56, 19.1, 19.1); //rupa za venti l
+        translate([0,25,75]) cylinder(21, 22, 22); //rupa za pecurku 1
+        translate([0,25,55]) cylinder(46, 21, 21); //rupa za crevo 1
+        translate([0,-25,75]) cylinder(21, 22, 22); //rupa za pecurku 2
+        translate([0,-25,55]) cylinder(46, 21, 21); //rupa za crevo 2
+        
+        translate([5,15,38]) rotate([-90,30,0])  //rupa za usnik
+            union() {
+                cylinder(12, 11,11);
+                translate([0,20,0]) cylinder(12, 11,11);
+                translate([-11,0,0]) cube([22,20,12]);
+        }
+
+        translate([0,15,5]) rotate([-90,0,0]) cylinder(12,2,2); //rupa za sraf
+//                    translate([0,-70,0]) cube(140);
+    
+    }
+}
+
+/*
+module dsvBody() {
+
+    difference() {
+        union() {
             translate([-23,-23,0]) cube([46,48,82]); //tuba za ventil
             translate([0,25,50]) cylinder(50, 23, 23); //tuba za crevo 1
             translate([0,-25,50]) cylinder(50, 23, 23); //tuba za crevo 2
@@ -163,6 +193,7 @@ module dsvBody() {
     }
 
 }
+*/
 //////////////////////////////////////////////////////////////////////////////////
 //dsv cep
 module dsvPlug() {
