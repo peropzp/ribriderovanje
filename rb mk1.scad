@@ -4,6 +4,7 @@ $fn = $preview ? 64 : 128;
 //export
 
 //dsvBody();
+//hoseConnector();
 //dsvMouthpiece();
 //dsvPlug();
 //topPlate();
@@ -160,6 +161,18 @@ module dsvBody() {
         translate([0,15,5]) rotate([-90,0,0]) cylinder(12,2,2); //rupa za sraf
 //                    translate([0,-70,0]) cube(140);
     
+    }
+}
+
+module hoseConnector() {
+
+    difference() {
+        union() {
+            cylinder(2, 23, 23); //tuba za crevo 1
+            cylinder(35, 22, 22); //tuba za crevo 2
+        }
+        translate([0,0,-1]) cylinder(37, 19, 19); //rupa za pecurku 1
+        translate([0,0,-1]) cylinder(34, 20, 20); //rupa za crevo 1
     }
 }
 
