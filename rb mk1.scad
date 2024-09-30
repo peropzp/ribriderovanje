@@ -3,6 +3,17 @@ $fn = $preview ? 64 : 128;
 //////////////////////////////////////////////////////////
 //export
 
+//                    cylinder(50, 11,11);
+//                    translate([0,20,0]) cylinder(50, 11,11);
+//                    translate([-11,0,0]) cube([22,20,50]);
+                    
+//                    union() {
+//                        circle(11);
+//                        translate([0,-11,0]) square([20,22]);
+//                        translate([20,0,0]) circle(11);
+//                    }    
+
+
 //dsvBody();
 //hoseConnector();
 //dsvMouthpiece();
@@ -14,6 +25,7 @@ $fn = $preview ? 64 : 128;
 //scrubberBase();
 //scrubberTube();
 //plug();
+//adv();
 //sensors();
 //pPortMale();
 //scruberTool();
@@ -29,8 +41,8 @@ $fn = $preview ? 64 : 128;
 //caseCylinder2d();
 //caseBase2d();
 
-
 /*
+
 ////////////////////////////////////////////////////////////
 //model
 translate([150,0,0]) rotate([0,0,-90]) color("purple",1) dsvBody();
@@ -115,26 +127,25 @@ module tank() {
 ///////////////////////////////////////////////////////////////////////////
 //dsv
 
-//dsv();
 module dsv() {
     color("green",1) difference() {
         dsvBody();
-        translate([0,-50,-10]) cube(123);
+//        translate([0,-50,-10]) cube(123);
     }
     
     color("blue",1) difference() {
         translate([0,5,0]) dsvMouthpiece();
-        translate([0,20,10]) cube([30,100,40]);
+//        translate([0,20,10]) cube([30,100,40]);
     }
 
     color("cyan",1) difference() {
         translate([0,-25,110]) rotate([0,180,0]) hoseConnector();
-        translate([0,-47,75]) cube(44);
+//        translate([0,-47,75]) cube(44);
     }
     
     color("magenta",1) difference() {
         dsvPlug();
-        translate([0,-19,-6]) cube([20,38,61]);
+//        translate([0,-19,-6]) cube([20,38,61]);
     }
 
 }
@@ -423,6 +434,17 @@ module sensors() {
         translate([0,-10,150]) cylinder(30, 14, 14);
     }
 }
+///////////////////////////////////////////////////////////////////////////////
+//adv
+module adv() {
+    difference() { 
+        plug();
+        translate([0,0,-6]) cylinder(27, 7.2, 7.2);
+        translate([0,0,7]) cylinder(27, 9.5, 9.5);
+    }
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //p-port za creva
 module pPortMale() {
