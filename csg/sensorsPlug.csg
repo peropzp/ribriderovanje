@@ -96,11 +96,13 @@ group() {
 				}
 			}
 		}
-		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -6], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 27, r1 = 7.2, r2 = 7.2, center = false);
-		}
-		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 1], [0, 0, 0, 1]]) {
-			cylinder($fn = 64, $fa = 12, $fs = 2, h = 27, r1 = 9.5, r2 = 9.5, center = false);
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 13], [0, 0, 0, 1]]) {
+			difference() {
+				cylinder($fn = 64, $fa = 12, $fs = 2, h = 20, r1 = 18, r2 = 18, center = false);
+				multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -1], [0, 0, 0, 1]]) {
+					cylinder($fn = 64, $fa = 12, $fs = 2, h = 22, r1 = 15.5, r2 = 15.5, center = false);
+				}
+			}
 		}
 	}
 }
