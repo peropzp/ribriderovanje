@@ -26,6 +26,7 @@ $fn = $preview ? 64 : 128;
 //scrubberTube();
 //plug();
 //adv();
+//sensorsPlug();
 //sensors();
 //pPortMale();
 //scruberTool();
@@ -403,11 +404,11 @@ module plug() {
             cylinder(20, 17.5,17.5);
             translate([0,0,-5]) cylinder(5, 19, 19);
         }
-        translate([0,0,13]) 
-            difference() {
-                cylinder(20,18,18);
-                translate([0,0,-1]) cylinder(22,15.5,15.5);
-            }
+//        translate([0,0,13]) 
+//            difference() {
+//                cylinder(20,18,18);
+//                translate([0,0,-1]) cylinder(22,15.5,15.5);
+//            }
 
         rotate_extrude() translate([15.6,3,0]) square([2,3]); //oring
         rotate_extrude() translate([15.6,8,0]) square([2,3]); //oring
@@ -425,6 +426,20 @@ module plug() {
 }
 ///////////////////////////////////////////////////////////////////////////////
 //celije
+//sensorsPlug();
+module sensorsPlug() {
+    difference() {
+        plug();
+        translate([0,0,13]) 
+            difference() {
+                cylinder(20,18,18);
+                translate([0,0,-1]) cylinder(22,15.5,15.5);
+            }
+    }
+}
+    
+        
+    
 module sensors() {
     difference() {
         cylinder(200, 17.5,17.5);
@@ -436,11 +451,12 @@ module sensors() {
 }
 ///////////////////////////////////////////////////////////////////////////////
 //adv
+//adv();
 module adv() {
     difference() { 
         plug();
         translate([0,0,-6]) cylinder(27, 7.2, 7.2);
-        translate([0,0,7]) cylinder(27, 9.5, 9.5);
+        translate([0,0,1]) cylinder(27, 9.5, 9.5);
     }
 }
 
