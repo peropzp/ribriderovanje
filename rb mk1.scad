@@ -242,7 +242,7 @@ module topPlate() {
          translate([70,0,-1]) cylinder(22, 17.6, 17.6); //celije levo
          translate([-70,0,-1]) cylinder(22, 17.6, 17.6); //desno
          translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
-         translate([0,-57,5]) cylinder(16, 29, 29); //p-port matica 
+         translate([0,-57,5]) cylinder(16, 28, 28); //p-port matica 
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////
