@@ -218,18 +218,30 @@ module hoseConnector() {
 
 //////////////////////////////////////////////////////////////////////////////////
 //dsv cep
+//dsvPlug();
+module roundedcube(xdim ,ydim ,zdim,rdim){
+    hull(){
+        translate([rdim,rdim,0])cylinder(h=zdim,r=rdim);
+        translate([xdim-rdim,rdim,0])cylinder(h=zdim,r=rdim);
+
+        translate([rdim,ydim-rdim,0])cylinder(h=zdim,r=rdim);
+        translate([xdim-rdim,ydim-rdim,0])cylinder(h=zdim,r=rdim);
+    }
+}
 module dsvPlug() {
         difference() {
             union() {
                 cylinder(55, 19, 19);
                 translate([0,0,-7])cylinder(7, 12, 19);
             }
-            translate([0,0,5]) cylinder(51, 13, 13);
+            //translate([0,0,5]) cylinder(51, 13, 13);
             rotate_extrude() translate([17.1,50,0]) square([2,3]); //oring
-            translate([-4,15,-1]) cube([8,8,49]); //slic za sraf
-            translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
+            translate([-4,22,-7]) rotate([90,0,0]) roundedcube(6 ,55 ,6,3);
+            //translate([-4,15,-1]) cube([6,6,49]); //slic za sraf
+            //translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
             translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
         }
+        
             
 }
 ///////////////////////////////////////////////////////////////////////////////////
@@ -272,6 +284,7 @@ module scrubber() {
     color("red",1) scrubberBase();
     color("green",0.5) translate([0,0,13]) scrubberTube();
 }
+//scrubberBase();
 module scrubberBase() {
 
     difference() {
@@ -290,7 +303,7 @@ module scrubberBase() {
         rotate_extrude() translate([52.5,3,0]) square([3,3]); //oring
         rotate_extrude() translate([52.5,8,0]) square([3,3]); // oring
          //nareckani obod
-        difference() {
+/*        difference() {
             translate([0,0,-6]) cylinder(7, 60, 60);
             translate([0,0,-7]) cylinder(9, 55,55);
                 for(a = [0 : 10 : 360]) {
@@ -298,7 +311,7 @@ module scrubberBase() {
                         &&(a != 200) && (a!=210) && (a!=220))
                         rotate([0,0,a]) translate([54,-2.5,-6]) cube(7,5,7);
                 }
-        }
+        }*/
     }
 }
 module scrubberTube() {
@@ -399,6 +412,7 @@ module scrubberTool() {
     
 //////////////////////////////////////////////////////////////////////////////
 //cep
+//plug();
 module plug() {
     difference() {
         union() {
@@ -415,14 +429,14 @@ module plug() {
         rotate_extrude() translate([15.6,8,0]) square([2,3]); //oring
         translate([0,0,-6]) cylinder(27, 3, 3);
         
-        difference() { //grooves
+ /*       difference() { //grooves
             translate([0,0,-6]) cylinder(7, 20, 20);
             translate([0,0,-6]) cylinder(7, 17.5,17.5);
                 for(a = [0 : 30 : 330]) {
                     if((a != 240) && (a!=270)&& (a!=300))
                         rotate([0,0,a]) translate([17,-2.5,-6]) cube(5,5,7);
                 }
-        }
+        }*/
     }
 }
 ///////////////////////////////////////////////////////////////////////////////
