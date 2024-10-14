@@ -234,9 +234,10 @@ module dsvPlug() {
 }
 ///////////////////////////////////////////////////////////////////////////////////
  //poklopac 
+//topPlate();
 module topPlate() {
      difference() {
-         cylinder(20,89,89); 
+         cylinder(15,90,90); 
          translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
          translate([70,0,-1]) cylinder(22, 17.6, 17.6); //celije levo
          translate([-70,0,-1]) cylinder(22, 17.6, 17.6); //desno
