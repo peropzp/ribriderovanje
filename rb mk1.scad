@@ -292,16 +292,16 @@ module scrubberBase() {
             cylinder(20,55,55);
             translate([0,0,-5]) cylinder(5,57,57);
         }
-        translate([0,0,13]) 
+        translate([0,0,10]) 
             difference() {
-                cylinder(8,56,56);
-                translate([0,0,-1]) cylinder(10,52,52);
+                cylinder(11,56,56);
+                translate([0,0,-1]) cylinder(13,52,52);
             }
        
         translate([0,0,-2]) cylinder(30,46,46);
         translate([0,0,-6])cylinder(7,19,19); //rupa za pport
-        rotate_extrude() translate([52.5,3,0]) square([3,3]); //oring
-        rotate_extrude() translate([52.5,8,0]) square([3,3]); // oring
+        rotate_extrude() translate([53.5,3,0]) square([2,2]); //oring
+        rotate_extrude() translate([53.5,6.5,0]) square([2,2]); // oring
          //nareckani obod
 /*        difference() {
             translate([0,0,-6]) cylinder(7, 60, 60);
@@ -425,8 +425,8 @@ module plug() {
 //                translate([0,0,-1]) cylinder(22,15.5,15.5);
 //            }
 
-        rotate_extrude() translate([15.6,3,0]) square([2,3]); //oring
-        rotate_extrude() translate([15.6,8,0]) square([2,3]); //oring
+        rotate_extrude() translate([15.6,3,0]) square([2,2]); //oring
+        rotate_extrude() translate([15.6,6.5,0]) square([2,2]); //oring
         translate([0,0,-6]) cylinder(27, 3, 3);
         
  /*       difference() { //grooves
@@ -445,7 +445,7 @@ module plug() {
 module sensorsPlug() {
     difference() {
         plug();
-        translate([0,0,13]) 
+        translate([0,0,10]) 
             difference() {
                 cylinder(20,18,18);
                 translate([0,0,-1]) cylinder(22,15.5,15.5);
