@@ -1,0 +1,24 @@
+group() {
+	difference() {
+		union() {
+			cylinder($fn = 64, $fa = 12, $fs = 2, h = 20, r1 = 17.5, r2 = 17.5, center = false);
+			multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -5], [0, 0, 0, 1]]) {
+				cylinder($fn = 64, $fa = 12, $fs = 2, h = 5, r1 = 19, r2 = 19, center = false);
+			}
+		}
+		rotate_extrude(angle = 360, convexity = 2, $fn = 64, $fa = 12, $fs = 2) {
+			multmatrix([[1, 0, 0, 15.6], [0, 1, 0, 3], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+				square(size = [2, 2], center = false);
+			}
+		}
+		rotate_extrude(angle = 360, convexity = 2, $fn = 64, $fa = 12, $fs = 2) {
+			multmatrix([[1, 0, 0, 15.6], [0, 1, 0, 6.5], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+				square(size = [2, 2], center = false);
+			}
+		}
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -6], [0, 0, 0, 1]]) {
+			cylinder($fn = 64, $fa = 12, $fs = 2, h = 27, r1 = 3, r2 = 3, center = false);
+		}
+	}
+}
+
