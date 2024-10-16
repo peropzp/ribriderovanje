@@ -150,19 +150,19 @@ module dsv() {
     }
 
 }
-    
+//dsvMouthpiece();    
 module dsvMouthpiece() {
 
     difference() {
         union() {
-            translate([5,15,38]) rotate([-90,30,0])  //usnik
+            translate([5,15,38]) rotate([-90,00,0])  //usnik
                 union() {
                     cylinder(50, 11,11);
                     translate([0,20,0]) cylinder(50, 11,11);
                     translate([-11,0,0]) cube([22,20,50]);
             }
         }
-        translate([5,10,38]) rotate([-90,30,0]) //rupa od usnika
+        translate([5,10,38]) rotate([-90,00,0]) //rupa od usnika
             union() {
                 cylinder(60, 8,8);
                 translate([0,20,0]) cylinder(60, 8,8);
@@ -183,18 +183,18 @@ module dsvBody() {
             translate([-27,-27,0]) cube([54, 54, 85]);
         }
         translate([0,0,-1]) cylinder(76, 17, 17); //rupa za venti l
-        translate([0,0,-1]) cylinder(56, 19.1, 19.1); //rupa za venti l
+        translate([0,0,-1]) cylinder(56, 19.2, 19.2); //rupa za venti 2
         translate([0,26,75]) cylinder(21, 23, 23); //rupa za pecurku 1
         translate([0,26,55]) cylinder(46, 21, 21); //rupa za crevo 1
         translate([0,-26,75]) cylinder(21, 23, 23); //rupa za pecurku 2
         translate([0,-26,55]) cylinder(46, 21, 21); //rupa za crevo 2
         
-        translate([5,19.5,38]) rotate([-90,30,0])  //rupa za usnik
+        translate([5,25,38]) rotate([-90,30,0])  //rupa za usnik
             union() {
                 cylinder(50, 11,11);
                 translate([0,20,0]) cylinder(50, 11,11);
                 translate([-11,0,0]) cube([22,20,50]);
-                translate([0,0,-5]) {
+                translate([0,0,-15]) {
                     cylinder(20, 8,8);
                     translate([0,20,0]) cylinder(60, 8,8);
                     translate([-8,0,0]) cube([16,20,60]);
@@ -237,8 +237,8 @@ module dsvPlug() {
                 translate([0,0,-7])cylinder(7, 12, 19);
             }
             //translate([0,0,5]) cylinder(51, 13, 13);
-            rotate_extrude() translate([17.1,50,0]) square([2,3]); //oring
-            translate([-4,22,-7]) rotate([90,0,0]) roundedcube(6 ,55 ,6,3);
+            rotate_extrude() translate([17.5,50,0]) square([2,2]); //oring
+            translate([-3,22,-7]) rotate([90,0,0]) roundedcube(6 ,55 ,6,3);
             //translate([-4,15,-1]) cube([6,6,49]); //slic za sraf
             //translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
             translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
@@ -253,8 +253,8 @@ module topPlate() {
      difference() {
          cylinder(15,90,90); 
          translate([0,29,-1]) cylinder(22, 55.1, 55.1); //scruber
-         translate([70,0,-1]) cylinder(22, 17.6, 17.6); //celije levo
-         translate([-70,0,-1]) cylinder(22, 17.6, 17.6); //desno
+         translate([70,0,-1]) cylinder(22, 17.7, 17.7); //celije levo
+         translate([-70,0,-1]) cylinder(22, 17.7, 17.7); //desno
          translate([0,-57,-1]) cylinder(22, 19, 19); //p-port
          translate([0,-57,5]) cylinder(16, 28, 28); //p-port matica 
     }
@@ -427,8 +427,8 @@ module plug() {
 //                translate([0,0,-1]) cylinder(22,15.5,15.5);
 //            }
 
-        rotate_extrude() translate([15.6,2,0]) square([2,2]); //oring
-        rotate_extrude() translate([15.6,6,0]) square([2,2]); //oring
+        rotate_extrude() translate([16,2,0]) square([2,2]); //oring
+        rotate_extrude() translate([16,6,0]) square([2,2]); //oring
         translate([0,0,-6]) cylinder(27, 3, 3);
         
  /*       difference() { //grooves
