@@ -236,16 +236,49 @@ module dsvPlug() {
                 cylinder(55, 19, 19);
                 translate([0,0,-7])cylinder(7, 12, 19);
             }
-            //translate([0,0,5]) cylinder(51, 13, 13);
             rotate_extrude() translate([17.5,50,0]) square([2,2]); //oring
             translate([-3,22,-7]) rotate([90,0,0]) roundedcube(6 ,55 ,6,3);
-            //translate([-4,15,-1]) cube([6,6,49]); //slic za sraf
-            //translate([-3,0,0]) rotate([0,0,20]) translate([0,15.5,42]) cube(6);//zakljucavanje za sraf
             translate([20,0,-2]) rotate([0,-90,0]) cylinder(40, 2, 2); //rupa za kanap
         }
-        
-            
 }
+///////////////////////////////////////////////////////////////////////////////////
+mashroom2d();
+module mashroom() {
+    
+    difference() {
+        cylinder(5, 20, 20);
+        translate([0,0,-1]) cylinder(7, 16.5, 16.5);
+    }
+    difference() {
+        cylinder(2, 2.5, 2.5);
+        translate([0,0,-1]) cylinder(4, 1, 1);
+    }
+    
+    for(a = [0 : 36 : 360]) {
+        rotate([0,0,a]) translate([2,-0.5,0]) cube([17,1,2]);
+    }
+}
+
+module mashroom2d() {
+    
+    difference() {
+        circle(20);
+        circle(16.5);
+    }
+    difference() {
+        circle(2);
+        circle(1);
+    }
+    
+    for(a = [0 : 36 : 360]) {
+        rotate([0,0,a]) translate([2,-0.5,0]) square([17,1]);
+    }
+}
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////
  //poklopac 
 //topPlate();
@@ -338,7 +371,7 @@ module scrubberTube() {
 module grid() {
     union() {
         difference() {
-            cylinder(2,51.5,51.5);
+            cylinder(2,52,52);
             translate([0,0,-1]) cylinder(4,49,49);
         }
         difference() {
@@ -355,10 +388,11 @@ module grid() {
     }
 }
 //resetka2d
+//grid2d();
 module grid2d() {
     union() {
         difference() {
-            circle(51.5);
+            circle(52);
             circle(49);
         }
         difference() {
@@ -367,7 +401,7 @@ module grid2d() {
         }
         difference() {
             circle(30);
-            circle(28);
+            circle(29);
         }
         for(a = [0 : 30 : 330]) {
             rotate([0,0,a]) translate([3,-1.5,0]) square([48,3]);
@@ -390,15 +424,16 @@ module sieve() {
         }
 }
 
+//sieve2d();
 module sieve2d() {
         difference() {
             circle(51.5);
             circle(3);
-            for(a = [8 : 1.5 : 49]) {
+/*            for(a = [8 : 1.5 : 49]) {
                 for(b = [0 : 90/a : 360]) {
                   rotate([0,0,b+a]) translate([a,0,0]) circle(0.65, $fn=6);
                 }
-            }
+            }*/
         }
 }
 
@@ -519,12 +554,13 @@ module caseCylinder (){
     }
 }
 
+//caseCylinder2d ();
 module caseCylinder2d (){
     difference() {
-        square([559,300]);
-        for(a = [25 : 30 : 545]) {
-            for(b = [30 : 30 : 270]) {
-                translate([a,b,0]) circle(10);
+        square([570,300]);
+        for(a = [30 : 15 : 545]) {
+            for(b = [30 : 15 : 270]) {
+                translate([a,b,0]) circle(5);
             }
         }
     }
@@ -540,11 +576,22 @@ module caseBase() {
 
     }
 }
+//caseBase2d();
 module caseBase2d() {
     difference() {
-        circle(89);
-        for(a = [0 : 30 : 350])
-            rotate([0,0,a + 15]) translate([70,0,0]) circle(12);
+        circle(91);
+        for(a = [0 : 15 : 350])
+            rotate([0,0,a + 15]) translate([70,0,0]) circle(5);
+        for(a = [25 : 20 : 140])
+            rotate([0,0,a + 15]) translate([50,0,0]) circle(5);
+        for(a = [205 : 20 : 320])
+            rotate([0,0,a + 15]) translate([50,0,0]) circle(5);
+        for(a = [30 : 30 : 140])
+            rotate([0,0,a + 15]) translate([30,0,0]) circle(5);
+        for(a = [210 : 30 : 320])
+            rotate([0,0,a + 15]) translate([30,0,0]) circle(5);
+        for(a = [0 : 90 : 350])
+            rotate([0,0,a + 15]) translate([10,0,0]) circle(5);
         translate([-40,0,0]) circle(15);
         translate([40,0,0]) circle(15);
 
