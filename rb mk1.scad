@@ -101,30 +101,34 @@ color("silver",0.5) {
 translate([0,50,720]) rotate([180,0,-90]) tank();
 
 translate([0,-50,720]) rotate([180,0,-90]) tank();
-
+*/
 ////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
 module regulator() {
+    color("silver") {
     cylinder(50,13,13);
     translate([-45,0,0]) rotate([0,90,00]) cylinder(85,20,20);
+    }
 }
 
 
 //tank();
 module tank() {
-    translate([0,0,50]) union() {
-        sphere(r = 50);
-        cylinder(270,50,50);
-        translate([0,0,270]) sphere(r = 50);
-        translate([0,0,310]) cylinder(35,15,15);
-        translate([0,30,345]) rotate([90,0,0]) cylinder(85,15,15);
-        translate([0,-15,345]) rotate([90,0,0]) cylinder(40,20,20);
-        translate([0,60,345]) rotate([90,0,0]) regulator();
+    
+    union() {
+        color("blue") sphere(r = 50);
+        color("blue") cylinder(270,50,50);
+        color("blue") translate([0,0,270]) sphere(r = 50);
+        color("lightgray") translate([0,0,310]) cylinder(35,15,15);
+        color("lightgray") translate([0,30,345]) rotate([90,0,0]) cylinder(85,15,15);
+        color("black") translate([0,-15,345]) rotate([90,0,0]) cylinder(40,20,20);
+        
     }
+    translate([0,60,345]) rotate([90,0,0]) regulator();
 }
-*/
+
 ///////////////////////////////////////////////////////////////////////////
 //dsv
 //dsv();
@@ -242,19 +246,20 @@ module dsvPlug() {
         }
 }
 ///////////////////////////////////////////////////////////////////////////////////
-mashroom2d();
+//mashroom();
 module mashroom() {
     
     difference() {
-        cylinder(5, 20, 20);
-        translate([0,0,-1]) cylinder(7, 16.5, 16.5);
+        cylinder(4, 20.1, 20.1);
+        translate([0,0,-1]) cylinder(12, 16.3, 16.3);
+        translate([0,0,2]) cylinder(12, 18.5, 18.5);
     }
     difference() {
-        cylinder(2, 2.5, 2.5);
-        translate([0,0,-1]) cylinder(4, 1, 1);
+        cylinder(2, 3, 3);
+        translate([0,0,-1]) cylinder(4, 1.2, 1.2);
     }
     
-    for(a = [0 : 36 : 360]) {
+    for(a = [0 : 45 : 360]) {
         rotate([0,0,a]) translate([2,-0.5,0]) cube([17,1,2]);
     }
 }
@@ -412,13 +417,14 @@ module grid2d() {
 
 //////////////////////////////////////////////////////////////////////////////
 //sito
+//sieve();
 module sieve() {
         difference() {
-            cylinder(0.5,51.5,51.5);
+            cylinder(1.5,51,51);
             translate([0,0,-1]) cylinder(4,3,3);
-            for(a = [8 : 1.5 : 49]) {
-                for(b = [0 : 90/a : 360]) {
-                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(2,0.65,0.65, $fn=6);
+            for(a = [8 : 2.5 : 49]) {
+                for(b = [0 : 150/a : 360]) {
+                  rotate([0,0,b+a]) translate([a,0,-1]) cylinder(3,1,1, $fn=6);
                 }
             }
         }
@@ -597,3 +603,42 @@ module caseBase2d() {
 
     }
 }
+
+module tankHolder() {
+    difference() {
+        union() {
+            intersection() {
+                translate([-55,-30,0]) cube([110,60,5]);
+                translate([0,0,0]) cylinder(5,55,55);
+            }
+            translate([-40,0,0]) cylinder(10, 15, 15);
+            translate([40,0,0]) cylinder(10, 15, 15);
+        }
+            
+        translate([-40,0,-1]) cylinder(12, 12.5, 12.5);
+        translate([40,0,-1]) cylinder(12, 12.5, 12.5);
+        translate([0,52,-1]) cylinder(10, 50, 50);
+        translate([0,-52,-1]) cylinder(10, 50, 50);
+        translate([20, 0,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([-20, 0,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([-45, 19,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([-45, -19,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([45, 19,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([45, -19,-1]) cylinder(10, 4, 4, $fn=6);
+    }
+        //translate([0,52,-1]) cylinder(10, 50, 50);
+        //translate([0,-52,-1]) cylinder(10, 50, 50);
+
+}
+/*
+tankHolder();
+translate ([0,0,120]) tankHolder();
+rotate([0,0,90]) translate([-52,0,-130]) tank();
+rotate([0,0,90]) translate([52,0,-130]) tank();
+translate([40,0,0]) cylinder(250, 12.5, 12.5);
+translate([-40,0,0]) cylinder(250, 12.5, 12.5);
+color("silver") translate([0,0,248]) caseBase();
+*/
+
+
+
