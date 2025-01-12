@@ -646,7 +646,7 @@ module mav() {
     difference() {
         cylinder(70,25,25);
         translate([-26,12,-1]) cube([52,50,72]);
-//        translate([-26,-2,-1]) cube([52,50,72]);
+//        translate([-26,2,-1]) cube([52,50,72]);
         translate([-26,-62,-1]) cube([52,50,72]);
         translate([-20,15,65]) rotate([90,0,0]) cylinder(30,2,2);
 
@@ -658,14 +658,14 @@ module mav() {
 
         translate([25,-2,57]) rotate([0,-90,0]) cylinder(41,2,2);
         
-        translate([10,-3,-1]) cylinder(5, 4, 4);
-        translate([10,-3,-1]) cylinder(55, 2, 2);
+        translate([9,-5,-1]) cylinder(10, 5.5, 5.5);
+        translate([9,-3,-1]) cylinder(55, 2, 2);
 
-        translate([-4,3,-1]) cylinder(5, 4, 4);
+        translate([-4,5,-1]) cylinder(10, 5.5, 5.5);
         translate([-4,3,-1]) cylinder(38, 2, 2);
 
-        translate([-18,-3,-1]) cylinder(5, 4, 4);
-        translate([-18,-3,-1]) cylinder(60, 2, 2);
+        translate([-17,-5,-1]) cylinder(10, 5.5, 5.5);
+        translate([-17,-3,-1]) cylinder(60, 2, 2);
 
     }
 
