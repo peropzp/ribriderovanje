@@ -636,8 +636,8 @@ module tankHolder() {
 module MavValve () {
     cylinder(6.35, 11.2, 11.2);
     translate([0,0,6.34]) cylinder(5.6, 8.6, 8.6);
-    translate([0,0,11.9]) cylinder(20, 7.5, 7.5);
-    translate([0,0,31.9]) cylinder(5, 6, 6);
+    translate([0,0,11.9]) cylinder(15, 7.5, 7.5);
+    translate([0,0,26.8]) cylinder(10, 6.5, 6.5);
     translate([0,0,-5]) cylinder(5, 10, 10);
 }
 
@@ -645,8 +645,9 @@ mav();
 module mav() {
     difference() {
         cylinder(70,25,25);
-        translate([-26,13,-1]) cube([52,50,72]);
-        translate([-26,-63,-1]) cube([52,50,72]);
+        translate([-26,12,-1]) cube([52,50,72]);
+//        translate([-26,-2,-1]) cube([52,50,72]);
+        translate([-26,-62,-1]) cube([52,50,72]);
         translate([-20,15,65]) rotate([90,0,0]) cylinder(30,2,2);
 
         translate([30,0,13]) rotate([0,-90,0]) MavValve();
@@ -655,16 +656,16 @@ module mav() {
         translate([25,0,35]) rotate([0,-90,0]) cylinder(20,5,5);
         translate([25,0,35]) rotate([0,-90,0]) cylinder(30,2,2);
 
-        translate([25,0,57]) rotate([0,-90,0]) cylinder(41,2,2);
+        translate([25,-2,57]) rotate([0,-90,0]) cylinder(41,2,2);
         
-        translate([7,0,-1]) cylinder(5, 4, 4);
-        translate([7,0,-1]) cylinder(55, 2, 2);
+        translate([10,-3,-1]) cylinder(5, 4, 4);
+        translate([10,-3,-1]) cylinder(55, 2, 2);
 
-        translate([-5,0,-1]) cylinder(5, 4, 4);
-        translate([-5,0,-1]) cylinder(38, 2, 2);
+        translate([-4,3,-1]) cylinder(5, 4, 4);
+        translate([-4,3,-1]) cylinder(38, 2, 2);
 
-        translate([-17,0,-1]) cylinder(5, 4, 4);
-        translate([-17,0,-1]) cylinder(60, 2, 2);
+        translate([-18,-3,-1]) cylinder(5, 4, 4);
+        translate([-18,-3,-1]) cylinder(60, 2, 2);
 
     }
 
