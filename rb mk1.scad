@@ -611,34 +611,76 @@ module tankHolder() {
                 translate([-55,-30,0]) cube([110,60,5]);
                 translate([0,0,0]) cylinder(5,55,55);
             }
-            translate([-40,0,0]) cylinder(10, 15, 15);
-            translate([40,0,0]) cylinder(10, 15, 15);
+            translate([-40,0,0]) cylinder(10, 16, 16);
+            translate([40,0,0]) cylinder(10, 16, 16);
         }
             
-        translate([-40,0,-1]) cylinder(12, 12.5, 12.5);
-        translate([40,0,-1]) cylinder(12, 12.5, 12.5);
-        translate([0,52,-1]) cylinder(10, 50, 50);
-        translate([0,-52,-1]) cylinder(10, 50, 50);
-        translate([20, 0,-1]) cylinder(10, 4, 4, $fn=6);
-        translate([-20, 0,-1]) cylinder(10, 4, 4, $fn=6);
+        translate([-40,0,-1]) cylinder(12, 12.6, 12.6);
+        translate([40,0,-1]) cylinder(12, 12.6, 12.6);
+        translate([0,52,-1]) cylinder(12, 50, 50);
+        translate([0,-52,-1]) cylinder(12, 50, 50);
+        translate([20, 0,-1]) cylinder(10, 3.5, 3.5, $fn=6);
+        translate([-20, 0,-1]) cylinder(10, 3.5, 3.5, $fn=6);
+        translate([12, 0,-1]) cylinder(10, 1.2, 1.2, $fn=6);
+        translate([-12, 0,-1]) cylinder(10, 1.2, 1.2, $fn=6);
         translate([-45, 19,-1]) cylinder(10, 4, 4, $fn=6);
         translate([-45, -19,-1]) cylinder(10, 4, 4, $fn=6);
         translate([45, 19,-1]) cylinder(10, 4, 4, $fn=6);
         translate([45, -19,-1]) cylinder(10, 4, 4, $fn=6);
+      
+
     }
-        //translate([0,52,-1]) cylinder(10, 50, 50);
-        //translate([0,-52,-1]) cylinder(10, 50, 50);
+}
+
+//MavValve();
+module MavValve () {
+    cylinder(6.35, 11.2, 11.2);
+    translate([0,0,6.34]) cylinder(5.6, 8.6, 8.6);
+    translate([0,0,11.9]) cylinder(20, 7.5, 7.5);
+    translate([0,0,31.9]) cylinder(5, 6, 6);
+    translate([0,0,-5]) cylinder(5, 10, 10);
+}
+
+mav();
+module mav() {
+    difference() {
+        cylinder(70,25,25);
+        translate([-26,13,-1]) cube([52,50,72]);
+        translate([-26,-63,-1]) cube([52,50,72]);
+        translate([-20,15,65]) rotate([90,0,0]) cylinder(30,2,2);
+
+        translate([30,0,13]) rotate([0,-90,0]) MavValve();
+        translate([25,0,57]) rotate([0,-90,0]) MavValve();
+        
+        translate([25,0,35]) rotate([0,-90,0]) cylinder(20,5,5);
+        translate([25,0,35]) rotate([0,-90,0]) cylinder(30,2,2);
+
+        translate([25,0,57]) rotate([0,-90,0]) cylinder(41,2,2);
+        
+        translate([7,0,-1]) cylinder(5, 4, 4);
+        translate([7,0,-1]) cylinder(55, 2, 2);
+
+        translate([-5,0,-1]) cylinder(5, 4, 4);
+        translate([-5,0,-1]) cylinder(38, 2, 2);
+
+        translate([-17,0,-1]) cylinder(5, 4, 4);
+        translate([-17,0,-1]) cylinder(60, 2, 2);
+
+    }
 
 }
+
+
+
+//tankHolder();
 /*
-tankHolder();
 translate ([0,0,120]) tankHolder();
 rotate([0,0,90]) translate([-52,0,-130]) tank();
 rotate([0,0,90]) translate([52,0,-130]) tank();
 translate([40,0,0]) cylinder(250, 12.5, 12.5);
 translate([-40,0,0]) cylinder(250, 12.5, 12.5);
 color("silver") translate([0,0,248]) caseBase();
-*/
 
+*/
 
 
