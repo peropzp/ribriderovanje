@@ -646,20 +646,20 @@ module mav() {
     difference() {
         cylinder(70,25,25);
         translate([-26,12,-1]) cube([52,50,72]);
-//        translate([-26,2,-1]) cube([52,50,72]);
+        translate([-26,-2,-1]) cube([52,50,72]);
         translate([-26,-62,-1]) cube([52,50,72]);
         translate([-20,15,65]) rotate([90,0,0]) cylinder(30,2,2);
 
-        translate([30,0,13]) rotate([0,-90,0]) MavValve();
+        translate([27,0,15]) rotate([0,-90,0]) MavValve();
         translate([25,0,57]) rotate([0,-90,0]) MavValve();
         
-        translate([25,0,35]) rotate([0,-90,0]) cylinder(20,5,5);
-        translate([25,0,35]) rotate([0,-90,0]) cylinder(30,2,2);
+        translate([25,0,36]) rotate([0,-90,0]) cylinder(20,5,5);
+        translate([25,0,36]) rotate([0,-90,0]) cylinder(30,2,2);
 
         translate([25,-2,57]) rotate([0,-90,0]) cylinder(41,2,2);
         
         translate([9,-5,-1]) cylinder(10, 5.5, 5.5);
-        translate([9,-3,-1]) cylinder(55, 2, 2);
+        translate([10,-3,-1]) cylinder(55, 2, 2);
 
         translate([-4,5,-1]) cylinder(10, 5.5, 5.5);
         translate([-4,3,-1]) cylinder(38, 2, 2);
