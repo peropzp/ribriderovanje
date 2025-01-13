@@ -686,5 +686,3 @@ translate([-40,0,0]) cylinder(250, 12.5, 12.5);
 color("silver") translate([0,0,248]) caseBase();
 
 */
-
-
