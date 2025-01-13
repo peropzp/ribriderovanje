@@ -646,31 +646,34 @@ module mav() {
     difference() {
         cylinder(72,25,25);
         translate([-26,14,-1]) cube([52,50,74]);
-        //translate([-26,0,-1]) cube([52,50,74]);
+        //translate([-26,5,-1]) cube([52,50,74]);
         translate([-26,-64,-1]) cube([52,50,74]);
         translate([0,15,68]) rotate([90,0,0]) cylinder(30,2,2);
+
+        //o2 Valve
+        translate([30,0,19]) rotate([0,-90,0]) MavValve();
+
         //dil Valve
-        translate([27,0,19]) rotate([0,-90,0]) MavValve();
-        translate([27,0,57]) rotate([0,-90,0]) cylinder(45,6.5,6.5);
-        //O2 Valve
         translate([27,0,57]) rotate([0,-90,0]) MavValve();
+        translate([27,0,57]) rotate([0,-90,0]) cylinder(45,6.5,6.5);
+
         //cmf
-        translate([26,3,38]) rotate([0,-90,0]) cylinder(2,7,7);
-        translate([25,3,38]) rotate([0,-90,0]) cylinder(20,5,5);
-        translate([25,3,38]) rotate([0,-90,0]) cylinder(33,2,2);
+        translate([26,2,38]) rotate([0,-90,0]) cylinder(2,7,7);
+        translate([25,2,38]) rotate([0,-90,0]) cylinder(20,5,5);
+        translate([25,2,38]) rotate([0,-90,0]) cylinder(33,2,2);
 
         
         //out
-        translate([13,-6,-1]) cylinder(10, 5.5, 5.5);
-        translate([12,-3,-1]) cylinder(55, 2, 2);
+        translate([14,-7,-1]) cylinder(10, 5.5, 5.5);
+        translate([12,-5,-1]) cylinder(55, 2.5, 2.5);
         
         //O2
-        translate([-2,7,-1]) cylinder(10, 5.5, 5.5);
-        translate([-5,6,-1]) cylinder(41, 2, 2);
+        translate([-1,7,-1]) cylinder(10, 5.5, 5.5);
+        translate([-2,6,-1]) cylinder(41, 2.4, 2.5);
 
         //dil
-        translate([-16,-6,-1]) cylinder(10, 5.5, 5.5);
-        translate([-16,-6,-1]) cylinder(60, 2, 2);
+        translate([-16,-7,-1]) cylinder(10, 5.5, 5.5);
+        translate([-16,-6,-1]) cylinder(60, 2.5, 2.5);
 
     }
 
@@ -686,3 +689,5 @@ translate([-40,0,0]) cylinder(250, 12.5, 12.5);
 color("silver") translate([0,0,248]) caseBase();
 
 */
+
+
