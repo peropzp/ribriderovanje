@@ -641,32 +641,36 @@ module MavValve () {
     translate([0,0,-5]) cylinder(5, 10, 10);
 }
 
-mav();
+rotate([0,180,0])mav();
 module mav() {
     difference() {
-        cylinder(70,25,25);
-        translate([-26,12,-1]) cube([52,50,72]);
-//        translate([-26,2,-1]) cube([52,50,72]);
-        translate([-26,-62,-1]) cube([52,50,72]);
-        translate([-20,15,65]) rotate([90,0,0]) cylinder(30,2,2);
-
+        cylinder(72,25,25);
+        translate([-26,14,-1]) cube([52,50,74]);
+        //translate([-26,0,-1]) cube([52,50,74]);
+        translate([-26,-64,-1]) cube([52,50,74]);
+        translate([0,15,68]) rotate([90,0,0]) cylinder(30,2,2);
+        //dil Valve
         translate([27,0,19]) rotate([0,-90,0]) MavValve();
-        translate([25,0,57]) rotate([0,-90,0]) MavValve();
+        translate([27,0,57]) rotate([0,-90,0]) cylinder(45,6.5,6.5);
+        //O2 Valve
+        translate([27,0,57]) rotate([0,-90,0]) MavValve();
+        //cmf
+        translate([26,3,38]) rotate([0,-90,0]) cylinder(2,7,7);
+        translate([25,3,38]) rotate([0,-90,0]) cylinder(20,5,5);
+        translate([25,3,38]) rotate([0,-90,0]) cylinder(33,2,2);
+
         
-        translate([26,0,38]) rotate([0,-90,0]) cylinder(2,7,7);
-        translate([25,0,38]) rotate([0,-90,0]) cylinder(20,5,5);
-        translate([25,0,38]) rotate([0,-90,0]) cylinder(30,2,2);
-
-        translate([25,-2,57]) rotate([0,-90,0]) cylinder(41,2,2);
+        //out
+        translate([13,-6,-1]) cylinder(10, 5.5, 5.5);
+        translate([12,-3,-1]) cylinder(55, 2, 2);
         
-        translate([9,-5,-1]) cylinder(10, 5.5, 5.5);
-        translate([10,-3,-1]) cylinder(55, 2, 2);
+        //O2
+        translate([-2,7,-1]) cylinder(10, 5.5, 5.5);
+        translate([-5,6,-1]) cylinder(41, 2, 2);
 
-        translate([-4,5,-1]) cylinder(10, 5.5, 5.5);
-        translate([-6,3,-1]) cylinder(38, 2, 2);
-
-        translate([-17,-5,-1]) cylinder(10, 5.5, 5.5);
-        translate([-17,-3,-1]) cylinder(60, 2, 2);
+        //dil
+        translate([-16,-6,-1]) cylinder(10, 5.5, 5.5);
+        translate([-16,-6,-1]) cylinder(60, 2, 2);
 
     }
 
