@@ -92,13 +92,12 @@ module mav() {
 
     }
 }
-/*
+
 mav();
 //o2 Valve
 color("green") translate([30,0,19]) rotate([0,-90,0]) MavValve();
 //dil Valve
 color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
-*/
 
 translate ([0,20,0])controlerBox();
 //baterije 14500
