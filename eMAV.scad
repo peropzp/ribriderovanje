@@ -1,3 +1,4 @@
+$fn=64;
 module roundedCube (width, len, height) {
     translate([-1*(len/2) + width/2, 0, 0]) cylinder(height, width/2, width/2, $fn=128);
     translate([(len/2) - width/2, 0, 0]) cylinder(height, width/2, width/2, $fn=128);
@@ -12,29 +13,6 @@ module roundedCorners(width, len, height, radius) {
     translate([0,0,-(len/2 - radius/2)]) rotate([90,0,90]) roundedCube (radius,width,height);
     translate([0, -(width-radius)/2,-(len-radius)/2]) cube([height, width-radius, len-radius]);
 }
-    
-module controlerBox() {
-    difference() {
-        translate([-21,0,0]) cube([42,20,80]);
-        
-        translate([0,-1,40]) rotate([0,0,90]) roundedCorners(32,70,16,16);
-        
-        translate([0,-0.3,40]) rotate([0,0,90]) difference() {
-            roundedCorners(38,76,2,18);
-            roundedCorners(34,72,2,17);
-        }
-
-        //rupe za srafove
-        translate([-18,21,77]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([18,21,77]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([-18,21,3]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([18,21,3]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        
-        //rupa za kabl
-        translate([-5,9,-1]) rotate([0,0,0]) cylinder(10,6,6);
-
-    }
-}
 
 //MavValve();
 module MavValve () {
@@ -45,19 +23,17 @@ module MavValve () {
     translate([0,0,-5]) cylinder(5, 10, 10);
 }
 
-//rotate([0,180,0])mav();
 module mav() {
     difference() {
-        cylinder(80,25,25);
-        translate([-26,14,-1]) cube([52,50,84]);
-        //translate([-26,4,-1]) cube([52,50,84]); //presek
-        translate([-26,-64,-1]) cube([52,50,84]);
+        translate([0,3,0]) cylinder(80,25,25);
+        translate([-26,-65,-1]) cube([52,50,84]);
+        translate([-26,27,-1]) cube([52,50,84]); //presek
         
-        //rupe za srafove
-        translate([-18,15,77]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([18,15,77]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([-18,15,3]) rotate([90,0,0]) cylinder(30,1.5,1.5);
-        translate([18,15,3]) rotate([90,0,0]) cylinder(30,1.5,1.5);
+        translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,66,17.1,5);
+
+        
+        //rupa za kabl
+        translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
 
         //o2 Valve
         translate([30,0,19]) rotate([0,-90,0]) MavValve();
@@ -79,31 +55,35 @@ module mav() {
 
         
         //out
-        translate([14,-7,-1]) cylinder(10, 5.5, 5.5);
-        translate([12,-5,-1]) cylinder(55, 2.5, 2.5);
+        translate([13,-8,-1]) cylinder(10, 5.5, 5.5);
+        translate([12,-6,-1]) cylinder(55, 2.5, 2.5);
         
         //O2
-        translate([-4,7,-1]) cylinder(10, 5.5, 5.5);
+        translate([-7,8,-1]) cylinder(10, 5.5, 5.5);
         translate([-7,5,-1]) cylinder(41, 2, 2);
 
         //dil
-        translate([-16,-7,-1]) cylinder(10, 5.5, 5.5);
+        translate([-14,-8,-1]) cylinder(10, 5.5, 5.5);
         translate([-16,-6,-1]) cylinder(60, 2.5, 2.5);
 
     }
 }
 
-mav();
+
 //o2 Valve
 color("green") translate([30,0,19]) rotate([0,-90,0]) MavValve();
 //dil Valve
 color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
+difference(){
+        mav();
+            //connector hole
+        translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
+}
 
-translate ([0,20,0])controlerBox();
 //baterije 14500
-translate([-7.5,28,15]) color("green") {
+translate([-7.5,17.5,17]) color("green") {
     cylinder(52,7.5,7.5);
     translate([15,0,0])cylinder(52,7.5,7.5);
 }
 //kontroler
-translate([-15,20,9]) color("blue") cube([30,12,4]);
+translate([-15,10,12]) color("blue") cube([30,12,4]);
