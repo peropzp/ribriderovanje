@@ -36,6 +36,12 @@ module mav() {
         //cable hole
         translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
 
+        //optics hole
+        translate([-5,20,-1]) rotate([0,0,0]) cylinder(20,1,1);
+
+        //piezo hole
+        translate([0,16,65]) rotate([0,0,0]) cylinder(20,6,6);
+
         //o2 Valve
         translate([30,0,19]) rotate([0,-90,0]) MavValve();
 
