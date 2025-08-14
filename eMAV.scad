@@ -65,8 +65,8 @@ module mav() {
 
         
         //out
-        translate([12,-8,-1]) cylinder(3, 5.5, 5.5);
-        translate([12,-8,-1]) cylinder(10, 5, 5);
+        translate([12,-6,-1]) cylinder(3, 5.5, 5.5);
+        translate([12,-6,-1]) cylinder(10, 5, 5);
         translate([12,-6,-1]) cylinder(55, 2, 2);
         
         //O2
@@ -75,8 +75,8 @@ module mav() {
         translate([-9,7,-1]) cylinder(41, 2, 2);
 
         //dil
-        translate([-13,-10,-1]) cylinder(3, 5.5, 5.5);
-        translate([-13,-10,-1]) cylinder(10, 5, 5);
+        translate([-13,-9,-1]) cylinder(3, 5.5, 5.5);
+        translate([-13,-9,-1]) cylinder(10, 5, 5);
         translate([-13,-7,-1]) cylinder(60, 2, 2);
 
     }
