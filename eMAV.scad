@@ -28,7 +28,7 @@ module mav() {
         translate([0,3,0]) cylinder(90,25,25); //cylinder fi50
         translate([-26,-65,-1]) cube([52,50,94]); //bottom cut
         translate([-26,27,-1]) cube([52,50,94]); //top cut
-        //translate([-26,12,-1]) cube([52,50,84]); //slice
+        //translate([-26,8,-1]) cube([52,50,84]); //slice
         
         //hole for batteries and controler
         translate([0,10,46]) rotate([0,0,90]) roundedCorners(32,70,17.1,5);
@@ -72,7 +72,7 @@ module mav() {
         //O2
         translate([-9,10,-1]) cylinder(3, 5.5, 5.5);
         translate([-9,10,-1]) cylinder(10, 5, 5);
-        translate([-7,8,-1]) cylinder(41, 2, 2);
+        translate([-9,7,-1]) cylinder(41, 2, 2);
 
         //dil
         translate([-14,-8,-1]) cylinder(3, 5.5, 5.5);
@@ -85,16 +85,16 @@ module mav() {
 mav();
 
 //o2 Valve
-//color("green") translate([27,0,19]) rotate([0,-90,0]) MavValve();
+color("green") translate([27,0,19]) rotate([0,-90,0]) MavValve();
 //dil Valve
-//color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
+color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
         
 /*
 //baterije 14500
-translate([-7.5,17.5,17]) color("green") {
+translate([-7.5,17.5,20]) color("green") {
     cylinder(52,7.5,7.5);
     translate([15,0,0])cylinder(52,7.5,7.5);
 }
 //kontroler
-translate([-15,10,12]) color("blue") cube([30,12,4]);
+translate([-15,10,15]) color("blue") cube([30,12,4]);
 */
