@@ -25,9 +25,10 @@ module MavValve () {
 
 module mav() {
     difference() {
-        translate([0,3,0]) cylinder(80,25,25); //cylinder fi50
+        translate([0,4,0]) cylinder(80,25,25); //cylinder fi50
         translate([-26,-65,-1]) cube([52,50,84]); //bottom cut
         translate([-26,27,-1]) cube([52,50,84]); //top cut
+        //translate([-26,-5,-1]) cube([52,50,84]); //slice
         
         //hole for batteries and controler
         translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,60,17.1,5);
@@ -43,7 +44,7 @@ module mav() {
         translate([0,16,65]) rotate([0,0,0]) cylinder(20,6,6);
 
         //o2 Valve
-        translate([30,0,19]) rotate([0,-90,0]) MavValve();
+        translate([27,0,19]) rotate([0,-90,0]) MavValve();
 
         //dil Valve
         translate([27,0,57]) rotate([0,-90,0]) MavValve();
@@ -70,15 +71,15 @@ module mav() {
         translate([-7,5,-1]) cylinder(41, 2, 2);
 
         //dil
-        translate([-14,-8,-1]) cylinder(10, 5.5, 5.5);
-        translate([-16,-6,-1]) cylinder(60, 2.5, 2.5);
+        translate([-13,-8,-1]) cylinder(10, 5.5, 5.5);
+        translate([-15,-6,-1]) cylinder(60, 2.5, 2.5);
 
     }
 }
 
 mav();
 //o2 Valve
-color("green") translate([30,0,19]) rotate([0,-90,0]) MavValve();
+color("green") translate([27,0,19]) rotate([0,-90,0]) MavValve();
 //dil Valve
 color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
         
