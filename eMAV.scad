@@ -25,14 +25,15 @@ module MavValve () {
 
 module mav() {
     difference() {
-        translate([0,3,0]) cylinder(80,25,25);
-        translate([-26,-65,-1]) cube([52,50,84]);
-        translate([-26,27,-1]) cube([52,50,84]); //presek
+        translate([0,3,0]) cylinder(80,25,25); //cylinder fi50
+        translate([-26,-65,-1]) cube([52,50,84]); //bottom cut
+        translate([-26,27,-1]) cube([52,50,84]); //top cut
         
+        //hole for batteries and controler
         translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,66,17.1,5);
 
         
-        //rupa za kabl
+        //cable hole
         translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
 
         //o2 Valve
@@ -69,16 +70,12 @@ module mav() {
     }
 }
 
-
+mav();
 //o2 Valve
 color("green") translate([30,0,19]) rotate([0,-90,0]) MavValve();
 //dil Valve
 color("black") translate([27,0,57]) rotate([0,-90,0]) MavValve();
-difference(){
-        mav();
-            //connector hole
-        translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
-}
+        
 
 //baterije 14500
 translate([-7.5,17.5,17]) color("green") {
