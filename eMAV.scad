@@ -25,14 +25,13 @@ module MavValve () {
 
 module mav() {
     difference() {
-        translate([0,3,0]) cylinder(80,25,25); //cylinder fi50
-        translate([-26,-65,-1]) cube([52,50,84]); //bottom cut
-        translate([-26,27,-1]) cube([52,50,84]); //top cut
+        translate([0,3,0]) cylinder(90,25,25); //cylinder fi50
+        translate([-26,-65,-1]) cube([52,50,94]); //bottom cut
+        translate([-26,27,-1]) cube([52,50,94]); //top cut
         //translate([-26,12,-1]) cube([52,50,84]); //slice
         
         //hole for batteries and controler
-        translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,60,17.1,5);
-
+        translate([0,10,46]) rotate([0,0,90]) roundedCorners(32,70,17.1,5);
         
         //cable hole
         translate([10,16,-1]) rotate([0,0,0]) cylinder(20,6,6);
@@ -41,7 +40,7 @@ module mav() {
         translate([-5,20,-1]) rotate([0,0,0]) cylinder(20,1,1);
 
         //piezo hole
-        translate([0,16,65]) rotate([0,0,0]) cylinder(20,6,6);
+        translate([0,16,75]) rotate([0,0,0]) cylinder(20,6,6);
 
         //o2 Valve
         translate([27,0,19]) rotate([0,-90,0]) MavValve();
