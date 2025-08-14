@@ -30,7 +30,7 @@ module mav() {
         translate([-26,27,-1]) cube([52,50,84]); //top cut
         
         //hole for batteries and controler
-        translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,66,17.1,5);
+        translate([0,10,40]) rotate([0,0,90]) roundedCorners(32,60,17.1,5);
 
         
         //cable hole
