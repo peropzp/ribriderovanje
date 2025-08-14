@@ -26,9 +26,9 @@ module MavValve () {
 module mav() {
     difference() {
         translate([0,3,0]) cylinder(90,25,25); //cylinder fi50
-        translate([-26,-65,-1]) cube([52,50,94]); //bottom cut
+        translate([-26,-67,-1]) cube([52,50,94]); //bottom cut
         translate([-26,27,-1]) cube([52,50,94]); //top cut
-        //translate([-26,8,-1]) cube([52,50,84]); //slice
+        //translate([-26,-5,-1]) cube([52,50,84]); //slice
         
         //hole for batteries and controler
         translate([0,10,46]) rotate([0,0,90]) roundedCorners(32,70,17.1,5);
@@ -50,7 +50,7 @@ module mav() {
         translate([27,0,57]) rotate([0,-90,0]) cylinder(45,6.5,6.5);
         
         //solenoid - out connection
-        translate([12,-16,38]) rotate([-90,0,0]) cylinder(20,2,2);
+        translate([12,-18,38]) rotate([-90,0,0]) cylinder(20,2,2);
 
 /*
         //cmf
@@ -75,9 +75,9 @@ module mav() {
         translate([-9,7,-1]) cylinder(41, 2, 2);
 
         //dil
-        translate([-14,-8,-1]) cylinder(3, 5.5, 5.5);
-        translate([-14,-8,-1]) cylinder(10, 5, 5);
-        translate([-15,-6,-1]) cylinder(60, 2, 2);
+        translate([-13,-10,-1]) cylinder(3, 5.5, 5.5);
+        translate([-13,-10,-1]) cylinder(10, 5, 5);
+        translate([-13,-7,-1]) cylinder(60, 2, 2);
 
     }
 }
