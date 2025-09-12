@@ -8,6 +8,7 @@
 
 unsigned long lastSolenoidTime = 0;
 unsigned long lastBlinkTime = 0;
+unsigned long solenoidCloseTime = 0;
 
 volatile int piezo_pressed = 0;
 unsigned long lastPressTime = 0;
@@ -91,8 +92,6 @@ void loop() {
     calibrate = false;
   }
   
-  blinks::setLed(SetPointIdx);
-
   //blink ppo2
   if(millis() >= (lastBlinkTime + BLINK_TIMEOUT) ) { //blink ppo2
     lastBlinkTime = millis();
@@ -102,16 +101,30 @@ void loop() {
   else if(millis() < lastBlinkTime) 
     lastBlinkTime = millis(); //fix millis rollover
 
-  //fire solenoid
+  blinks::setLed(SetPointIdx);
+
+  //open solenoid
   if(millis() >= (lastSolenoidTime + SOLENOID_TIMEOUT) ) { 
     lastSolenoidTime = millis();
     pid->setSetpoint(SetPoint[SetPointIdx]);
     ppo2 = ppo->read();
-    float solTime = pid->calculate(ppo2);
-    fireSolenoid(solTime * SOLENOID_CONSTANT);
+
+    unsigned long solTime = pid->calculate(ppo2) * SOLENOID_CONSTANT;
+    if(solTime > 100) {
+      solenoidCloseTime = lastSolenoidTime + solTime;
+      digitalWrite(SOLENOID, HIGH);
+    }
   }
-  else if(millis() < lastSolenoidTime) 
+  else if(millis() < lastSolenoidTime) {
     lastSolenoidTime = millis(); //fix millis rollover
+    solenoidCloseTime = 0;
+  }
+
+  //shut solenoid
+  if(millis() >= solenoidCloseTime) {
+    digitalWrite(SOLENOID, LOW);   
+  }  
+
 
   delay(10);
 }

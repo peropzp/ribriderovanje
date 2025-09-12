@@ -10,7 +10,7 @@
 #define integralCorrection 0.4
 #define diffCorrection 0.4
 #define histeresis 0.01
-#define limitCalc 7
+#define limitCalc 3.0
 
 class PID
 {
