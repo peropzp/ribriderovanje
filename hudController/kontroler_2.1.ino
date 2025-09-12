@@ -94,7 +94,7 @@ void loop() {
   blinks::setLed(SetPointIdx);
 
   //blink ppo2
-  if(millis() >= (lastBlinkTime + LED_TIMEOUT) ) { //blink ppo2
+  if(millis() >= (lastBlinkTime + BLINK_TIMEOUT) ) { //blink ppo2
     lastBlinkTime = millis();
     ppo2 = ppo->read();
     blinks::blinkPPO2(ppo2, SetPointIdx);

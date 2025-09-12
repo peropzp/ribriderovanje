@@ -63,7 +63,7 @@ float PPOSensor::read() {
    
   float ppov = vote(ppo0, ppo1, ppo2);
   /////////////////////////////////////////
-  //ppov = 0.9;
+  ppov = 0.9;
   /////////////////////////////////////////
   return ppov;
 } 

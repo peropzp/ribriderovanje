@@ -3,6 +3,8 @@
 
 #define LONG_BLINK 700
 #define SHORT_BLINK 100
+#define BLINK_TIMEOUT 20000
+
 
 #define LED_OFF 255
 #define LED_LOW 224

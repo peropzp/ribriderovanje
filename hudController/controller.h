@@ -6,7 +6,6 @@
 
 #define SOLENOID_CONSTANT 1000
 #define SOLENOID_TIMEOUT 7000 //solenoid reaction timeout
-#define LED_TIMEOUT 10000
 
 #define PRESS_TIMEOUT 500
 
