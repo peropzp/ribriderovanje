@@ -17,7 +17,7 @@ static void blinks::setLedIntensity(int intensity) {
 }
  
 static void blinks::setLed(int SetPointIdx) {
-  if(SetPointIdx) {
+  if(!SetPointIdx) {
     blinks::setLedIntensity(LED_LOW);
   }
   else {
@@ -58,12 +58,12 @@ static void blinks::blinkBatt(int level) {
 static void blinks::blinkOk() {
   setLedIntensity(LED_OFF);
   for(int i=0; i<2; ++i) {
-    delay(LONG_BLINK);
+    delay(SHORT_BLINK*3);
     setLedIntensity(LED_HIGH);
-    delay(LONG_BLINK);
+    delay(SHORT_BLINK*3);
     setLedIntensity(LED_LOW);
   }
-  delay(LONG_BLINK);
+  delay(SHORT_BLINK);
   setLedIntensity(LED_OFF);
 }
 
@@ -75,13 +75,13 @@ static void blinks::blinkPPO2(float ppo2Level, int SetPointIdx) {
   if(bl < -1) speed = SHORT_BLINK;
   else speed = LONG_BLINK;
   
-  if((ppo2Level < 0.6) || (ppo2Level > 1.6)) intensity = LED_HIGH;
+  if((ppo2Level < 0.5) || (ppo2Level > 1.6)) intensity = LED_HIGH;
 
   bl = abs(bl);
   if(bl == 0) bl = 1;
 
   setLedIntensity(LED_OFF);
-  delay(2*LONG_BLINK);
+  delay(LONG_BLINK);
 
   for(int i=0; i<bl; ++i) {
     setLedIntensity(intensity);
@@ -89,5 +89,5 @@ static void blinks::blinkPPO2(float ppo2Level, int SetPointIdx) {
     setLedIntensity(LED_OFF);
     delay(SHORT_BLINK);
   }
-  delay(2*LONG_BLINK);
+  delay(LONG_BLINK);
 }

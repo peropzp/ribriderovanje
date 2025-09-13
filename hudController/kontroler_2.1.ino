@@ -1,3 +1,18 @@
+/*
+ * Build with :
+ * Board: Attiny25/45/85(No Bootloader)
+ * Chip: Attiny85
+ * Clock: 1MHz (internal)
+ * millis()/micros(): Enabled
+ * Save EEPROM: EEPROM Retained
+ * B.O.D Disabled
+ * Programmer: USBasp(Attiny Core)
+ * 
+ * First burn bootloader then upload fw
+ */
+
+
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
