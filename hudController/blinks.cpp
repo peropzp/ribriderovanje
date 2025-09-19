@@ -17,7 +17,7 @@ static void blinks::setLedIntensity(int intensity) {
 }
  
 static void blinks::setLed(int SetPointIdx) {
-  if(!SetPointIdx) {
+  if(SetPointIdx) {
     blinks::setLedIntensity(LED_LOW);
   }
   else {
